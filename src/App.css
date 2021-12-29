@@ -16,6 +16,12 @@
   margin-left: 100px;
 }
 
+.btn-green {
+  background-color: #6CC15A;
+  border: none;
+}
+
+
 .navbar > .container {
   margin: 0;
 }

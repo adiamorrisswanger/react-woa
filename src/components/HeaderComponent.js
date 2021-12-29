@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import CTA from './CTAComponent';
 
 class Header extends Component {
     
@@ -60,12 +61,7 @@ class Header extends Component {
                 </Navbar>
 
                 <Jumbotron fluid>
-                    <div className="cta-header">
-                        <h2>Work of Art: Business Skills for Artists</h2>
-                        <p className="py-3">
-                            Sign up for interactive content, exercises, and games to strengthen your creative business!
-                        </p>
-                    </div>
+                    <CTA />
                 </Jumbotron>
 
             </React.Fragment>
