@@ -24,7 +24,7 @@ class Header extends Component {
         return (
             <React.Fragment>
 
-                <Navbar sticky="top" expand="md">
+                <Navbar expand="md">
                     <div className="container">
                         <NavbarBrand href="/"><img src="/images/WoALogo-2020-SM.png" alt="NuCamp Logo" /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />

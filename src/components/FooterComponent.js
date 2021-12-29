@@ -1,31 +1,57 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Footer(props) {
     return (
-        <footer className="site-footer">
-            <div className="container">
-                <div className="row">             
-                    <div className="col-4 col-sm-2 offset-1">
-                        <h5>Links</h5>
-                        <ul className="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Directory</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
+        <footer className="text-center">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-sm-4 pt-3">
+                        <img className="img-fluid" src="/images/SpringboardLogo_3color.png" width="80%"/>
                     </div>
-                    <div className="col-6 col-sm-3 text-center">
-                        <h5>Social</h5>
-                        <a className="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i className="fa fa-instagram" /></a>{' '}
-                        <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/"><i className="fa fa-facebook" /></a>{' '}
-                        <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter" /></a>{' '}
-                        <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube" /></a> 
+                    <div className="col-sm-4">
+                        <h4>Navigation</h4>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Home
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            About Work of Art
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Artist Portal
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Upcoming Events
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Contact Us
+                        </NavLink>
                     </div>
-                    <div className="col-sm-4 text-center">
-                        <a role="button" className="btn btn-link" href="tel:+12065551234"><i className="fa fa-phone" /> 1-206-555-1234</a><br />
-                        <a role="button" className="btn btn-link" href="mailto:notreal@notreal.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
+                    <div className="col-sm-4">
+                        <h4>Springboard for the Arts</h4>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Springboard Home
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Connect to Artists
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Job Board
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Creative Exchange
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/home">
+                            Resource Center
+                        </NavLink>
                     </div>
                 </div>
+                <hr />
+                <div className="row-sm-12">
+                    <small>
+                        Work of Art: Business Skills for Artists Ⓒ 2021 Springboard for the Arts. All rights reserved.
+                    </small>
+                </div>  
             </div>
         </footer>
     );
