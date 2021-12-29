@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+
+.jumbotron {
+  margin-bottom: 0%;
+  background-image: url("../public/images/muralpainting.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cta-header {
+  background-color: #fff;
+  padding: 40px;
+  width: 400px;
+  border-top: solid 15px #197CA3;
+  margin-left: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar > .container {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav a {
+  color: #979797;
+} 
+
+footer {
+  padding: 5%;
+  background-color: #eee;
 }
 
-.App-link {
-  color: #61dafb;
+footer a {
+  color: #979797;
+  font-size: .90rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer h4 {
+  font-size: 1.20rem;
+}
+
+footer a:hover {
+  color: #252525;
+}
+
+nav {
+  background-color: #fff;
+}
+
+/* FONTS */
+
+h2 {
+  text-transform: uppercase;
+  color: #F78F1E;
 }

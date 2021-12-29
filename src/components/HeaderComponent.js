@@ -1,26 +1,73 @@
-import React, { Component } from 'react';
-import { Navbar, NavbarBrand, Jumbotron } from 'reactstrap';
+import React, { Component }  from 'react';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
+    
+    constructor(props) {
+        super(props);
+
+        this.toggleNav = this.toggleNav.bind(this);
+        this.state = {
+          isNavOpen: false
+        };
+    }
+
+    toggleNav() {
+        this.setState({
+            isNavOpen: !this.state.isNavOpen
+        });
+    }
+
     render() {
         return (
             <React.Fragment>
-                <Jumbotron fluid>
+
+                <Navbar sticky="top" expand="md">
                     <div className="container">
-                        <div className="row">
-                            <div className="col">
-                                <h1>Work of Art</h1>
-                                <h2>Tagline here</h2>
-                            </div>
-                        </div>
+                        <NavbarBrand href="/"><img src="/images/WoALogo-2020-SM.png" alt="NuCamp Logo" /></NavbarBrand>
+                        <NavbarToggler onClick={this.toggleNav} />
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                            <Nav navbar>
+                                <NavItem>
+                                    <NavLink className="nav-link mx-2" to="/home">
+                                        Home
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link mx-2" to="/home">
+                                        Artist Portal
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link mx-2" to="/home">
+                                        About
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link mx-2" to="/home">
+                                        Events
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link mx-2" to="/home">
+                                        Contact
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                        </Collapse>
+                    </div>
+                </Navbar>
+
+                <Jumbotron fluid>
+                    <div className="cta-header">
+                        <h2>Work of Art: Business Skills for Artists</h2>
+                        <p className="py-3">
+                            Sign up for interactive content, exercises, and games to strengthen your creative business!
+                        </p>
                     </div>
                 </Jumbotron>
 
-                <Navbar dark sticky="top">
-                    <div className="container">
-                        <NavbarBrand href="/">Work of Art</NavbarBrand>
-                    </div>
-                </Navbar>
             </React.Fragment>
         );
     }
