@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Footer from './FooterComponent';
+import ArtistPortal from './ArtistPortalComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
@@ -22,6 +23,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
+                    <Route path='/artistportal' render={() => <ArtistPortal /> } />
                     <Redirect to='/home'/>
                 </Switch>
                 <Footer />
