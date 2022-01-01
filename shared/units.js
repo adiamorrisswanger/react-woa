@@ -2,7 +2,7 @@ export const UNITS = [
     {
         id: 0,
         name: "Career Planning",
-        image: "../02_WoA_2020-CareerPlnngCover.png",
+        image: "../images/02_WoA_2020-CareerPlnngCover.png",
         description: "Where do you want to be: artistically and professionally? Learn how to define your values, identify key choices, and develop a plan to achieve career goals.",
         featured: true
     },

@@ -4,8 +4,8 @@ import { Card, CardImg, CardTitle, CardBody } from 'reactstrap';
 
 function Directory(props) {
     return(
-        
-    )
+        <h1>Placeholder</h1>    
+    );
 }
 
 
