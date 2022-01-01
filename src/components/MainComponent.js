@@ -6,10 +6,13 @@ import Contact from './ContactComponent';
 import Footer from './FooterComponent';
 import ArtistPortal from './ArtistPortalComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
-
+import { UNITS } from '../shared/units.js';
 class Main extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            units: UNITS
+        }
     }
 
     render() {
