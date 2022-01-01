@@ -7,7 +7,7 @@ function ArtistPortal() {
                 
                 <h2>Artist Portal</h2>
                 <p>Some introductory text</p>
-                <Directory />
+                {/* <Directory /> */}
             </div>
         )
     }
