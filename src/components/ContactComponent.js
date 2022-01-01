@@ -95,8 +95,8 @@ class Contact extends Component {
                     <Form onSubmit={this.handleSubmit}>
 
                     <FormGroup row>
-                                <Label htmlFor="firstName" md={2}>First Name</Label>
-                                <Col md={10}>
+                                <Col md={6}>
+                                    <Label htmlFor="firstName">First Name</Label>
                                     <Input type="text" id="firstName" name="firstName"
                                         placeholder="First Name"
                                         value={this.state.firstName}
@@ -105,10 +105,9 @@ class Contact extends Component {
                                         onChange={this.handleInputChange} />
                                     <FormFeedback>{errors.firstName}</FormFeedback>
                                 </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label htmlFor="lastName" md={2}>Last Name</Label>
-                                <Col md={10}>
+
+                                <Col md={6}>
+                                    <Label htmlFor="lastName">Last Name</Label>
                                     <Input type="text" id="lastName" name="lastName"
                                         placeholder="Last Name"
                                         value={this.state.lastName}
@@ -119,8 +118,8 @@ class Contact extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label htmlFor="phoneNum" md={2}>Phone</Label>
-                                <Col md={10}>
+                                <Col md={6}>
+                                    <Label htmlFor="phoneNum">Phone</Label>
                                     <Input type="tel" id="phoneNum" name="phoneNum"
                                         placeholder="Phone number"
                                         value={this.state.phoneNum}
@@ -129,10 +128,9 @@ class Contact extends Component {
                                         onChange={this.handleInputChange} />
                                     <FormFeedback>{errors.phoneNum}</FormFeedback>
                                 </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label htmlFor="email" md={2}>Email</Label>
-                                <Col md={10}>
+    
+                                <Col md={6}>
+                                    <Label htmlFor="email">Email</Label>
                                     <Input type="email" id="email" name="email"
                                         placeholder="Email"
                                         value={this.state.email}
@@ -145,15 +143,15 @@ class Contact extends Component {
 
                         <fieldset className="form-group">
                             <div className="row">
-                                <legend className="col-form-label col-sm-4 pt-0 label">Preferred Contact Method</legend>
-                                <div className="col">
+                                <Col md={12}>
+                                    <Label>Preferred Contact Method</Label>
                                     <Input type="select" name="contactType"
                                         value={this.state.contactType}
                                         onChange={this.handleInputChange}>
-                                        <option>By Phone</option>
-                                        <option>By Email</option>
+                                        <option>Please contact me by Phone</option>
+                                        <option>Please contact me by Email</option>
                                     </Input>
-                                </div>
+                                </Col>
                             </div>
                         </fieldset>
 
