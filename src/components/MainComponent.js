@@ -32,7 +32,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route path='/artistportal' render={() => <ArtistPortal /> } />
+                    <Route path='/artistportal' render={() => <ArtistPortal units={this.state.units}/> } />
                     <Route path='/events' render={() => <Events calenders={this.state.calenders}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'component={Contact} />
