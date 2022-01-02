@@ -53,7 +53,8 @@ nav {
 }
 
 .contact-div,
-.about-div {
+.about-div,
+.calender-div {
   padding: 25px;
 }
 
@@ -68,14 +69,32 @@ label {
   padding: 5px;
 }
 
+.bg-ltgrey {
+  background-color: #f7f7f7;
+}
+
 
 /* FONTS */
+
+h1 {
+  color: #197CA3;
+}
 
 h2 {
   text-transform: uppercase;
   color: #F78F1E;
 }
 
+h5,
+h3 {
+  color: #6CC15A;
+}
+
 h4 {
   color: #000;
+}
+
+.h2-date {
+  color: #197CA3;
+  font-weight: bold;
 }
