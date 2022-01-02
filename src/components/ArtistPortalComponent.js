@@ -21,7 +21,7 @@ class ArtistPortal extends Component {
                     </div>
                 </div>
                 <div className="row">
-                     {this.renderDirectory}
+                     <Directory />
                 </div>
             </div>
         )
