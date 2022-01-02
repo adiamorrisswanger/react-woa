@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { UNITS } from '../shared/units';
 import Directory from './DirectoryComponent';
 
-function ArtistPortal() {
+class ArtistPortal extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            units: UNITS
+        }
+    }    
+    
+
+    render() {
         return (
             <div className="container">
                 <div className="row">
@@ -11,10 +21,12 @@ function ArtistPortal() {
                     </div>
                 </div>
                 <div className="row">
-                    <Directory />   
+                     {this.renderDirectory}
                 </div>
             </div>
         )
+    }
+    
     }    
        
 
