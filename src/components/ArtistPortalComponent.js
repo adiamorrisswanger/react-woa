@@ -1,29 +1,34 @@
 import React from 'react';
-import { Card, CardTitle, CardBody } from 'reactstrap';
+import { Card, CardTitle, CardBody, CardImg, Container, Row, Col } from 'reactstrap';
+import CardGroup from 'reactstrap/lib/CardGroup';
 
 
 function RenderUnits({unit}) {
     return (
-        <React.Fragment>
+ 
             <div className="container">
-                <Card>
-                    <CardTitle>
-                        <h2>{unit.name}</h2>
-                        </CardTitle>
-                    <CardBody>
-                        {unit.image}
-                        {unit.description}
-                    </CardBody>
-                </Card>
+                <div className="row ">
+                    <div className="col">
+                            <Card>
+                                <CardImg width="100%" src={unit.image} alt={unit.name} />
+                                <CardTitle>
+                                    <h2>{unit.name}</h2>
+                                    </CardTitle>
+                                <CardBody>
+                                    
+                                    {unit.description}
+                                </CardBody>
+                            </Card>
+                    </div>
+                </div>
             </div>
-        </React.Fragment>
     )
 }
 
 function ArtistPortal(props) {   
     const unitDirectory = props.units.map(unit => {
         return(
-            <div key={unit.id} className="m-3">
+            <div key={unit.id} className="col-md-4 mb-4 mx-auto">
                 <RenderUnits unit={unit} />
             </div>
             );
@@ -39,9 +44,7 @@ function ArtistPortal(props) {
                 </div>
             </div>
             <div className="row">
-                 <div className="col">
                      {unitDirectory}
-                 </div>
             </div>
         </div>
     );
