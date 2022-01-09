@@ -1,26 +1,6 @@
 import React from 'react';
 import { Card, CardTitle, CardBody } from 'reactstrap';
 
-function RenderEvents({calender}) {
-    return (
-        <React.Fragment>
-            <div className="container">
-                <div className="row">
-                    <Card className="col-md-12 p-3 bg-ltgrey">
-                        <CardTitle>
-                            <h2 class="h2-date">{calender.date}</h2>
-                        </CardTitle>
-                        <CardBody>
-                            <h5 className="card-title">{calender.title}</h5>
-                            <p className="card-text">{calender.description}</p>
-                        </CardBody>
-                    </Card>
-                </div>
-            </div>
-        </React.Fragment>
-    );
-}
-
 function Events(props) {
     const eventDirectory = props.calenders.map(calender => {
         return(
@@ -44,6 +24,26 @@ function Events(props) {
                 </div>
             </div>
         </div>
+    );
+}
+
+function RenderEvents({calender}) {
+    return (
+        <React.Fragment>
+            <div className="container">
+                <div className="row">
+                    <Card className="col-md-12 p-3 bg-ltgrey">
+                        <CardTitle>
+                            <h2 class="h2-date">{calender.date}</h2>
+                        </CardTitle>
+                        <CardBody>
+                            <h5 className="card-title">{calender.title}</h5>
+                            <p className="card-text">{calender.description}</p>
+                        </CardBody>
+                    </Card>
+                </div>
+            </div>
+        </React.Fragment>
     );
 }
        

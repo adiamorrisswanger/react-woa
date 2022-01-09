@@ -21,6 +21,20 @@
   border: none;
 }
 
+.btn-green:hover {
+  background-color: rgb(138, 218, 123);
+  border: none;
+}
+
+.btn-orange {
+  background-color: #f78f1e;
+  border: none;
+}
+
+.btn-orange:hover {
+  background-color: rgb(245, 165, 79);
+  border: none;
+}
 
 .navbar > .container {
   margin: 0;
