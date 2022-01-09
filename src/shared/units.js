@@ -37,7 +37,7 @@ export const UNITS = [
     {
         id: 5,
         name: "Pricing",
-        image: "../images/06_WoA_2020-PricingOver.png",
+        image: "../images/06_WoA_2020-PricingCover.png",
         description: "This analytical approach isn't intended to be the only way to price your work. It's intended to show you the factors of product production that apply to everything in the marketplace. Once you understand what each of the variables are you'll be able to customize a formula that fits your business model.",
         featured: false
     },
