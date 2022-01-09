@@ -25,7 +25,7 @@ class CTA extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    validate(firstName, lastName, phoneNum, emailAddress, referred) {
+    validate(firstName, lastName, emailAddress, referred) {
 
         const errors = {
             firstName: '',
@@ -95,7 +95,7 @@ class CTA extends Component {
 
         render() {
 
-            const errors = this.validate(this.state.firstName, this.state.lastName, this.state.phoneNum, this.state.email); 
+            const errors = this.validate(this.state.firstName, this.state.lastName, this.state.emailAddress, this.state.referred); 
 
             return (
                 <React.Fragment>
@@ -110,49 +110,79 @@ class CTA extends Component {
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                         <ModalHeader toggle={this.toggleModal}>SIGN UP TODAY!</ModalHeader>
                         <ModalBody>
-
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup row>
                                     <Col md={6}>
                                         <Label htmlFor="firstName">First Name</Label>
-                                        <Input type="text" id="firstName" name="firstName" placeholder="First"               value={this.state.firstName}
-                                        invalid={errors.firstName}
-                                        onBlur={this.handleBlur("firstName")}
-                                        onChange={this.handleInputChange} />
+                                        <Input 
+                                            type="text" 
+                                            id="firstName" 
+                                            name="firstName" 
+                                            placeholder="First"
+                                            value={this.state.firstName}
+                                            invalid={errors.firstName}
+                                            onBlur={this.handleBlur("firstName")}
+                                            onChange={this.handleInputChange} 
+                                        />
                                     <FormFeedback>{errors.firstName}</FormFeedback>
                                     </Col>
                                     <Col md={6}>
                                         <Label htmlFor="lastName">Last Name</Label>
-                                        <Input type="text" id="lastName" name="lastName" placeholder="Last"                value={this.state.lastName}
-                                        invalid={errors.lastName}
-                                        onBlur={this.handleBlur("lastName")}
-                                        onChange={this.handleInputChange} />
+                                        <Input 
+                                            type="text" 
+                                            id="lastName" 
+                                            name="lastName" 
+                                            placeholder="Last"
+                                            value={this.state.lastName}
+                                            invalid={errors.lastName}
+                                            onBlur={this.handleBlur("lastName")}
+                                            onChange={this.handleInputChange} 
+                                        />
                                     <FormFeedback>{errors.lastName}</FormFeedback>
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col>
                                         <Label htmlFor="emailAddress">Email Address</Label>
-                                        <Input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address"                          value={this.state.emailAddress}
-                                        invalid={errors.emailAddress}
-                                        onBlur={this.handleBlur("emailAddress")}
-                                        onChange={this.handleInputChange} />
-                                    <FormFeedback>{errors.firstName}</FormFeedback>
+                                        <Input 
+                                            type="text" 
+                                            id="emailAddress" 
+                                            name="emailAddress" 
+                                            placeholder="Email Address"
+                                            value={this.state.emailAddress}
+                                            invalid={errors.emailAddress}
+                                            onBlur={this.handleBlur("emailAddress")}
+                                            onChange={this.handleInputChange} 
+                                        />
+                                    <FormFeedback>{errors.emailAddress}</FormFeedback>
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col>
                                         <Label htmlFor="organization">Organization</Label>
-                                        <Input type="text" id="organization" name="organization" placeholder="(Optional)" value={this.state.organization} onChange={this.handleInputChange} />
+                                        <Input 
+                                            type="text" 
+                                            id="organization" 
+                                            name="organization" 
+                                            placeholder="(Optional)" 
+                                            value={this.state.organization} 
+                                            onChange={this.handleInputChange} 
+                                        />
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
                                     <Col>
                                         <Label htmlFor="referred">Where did you hear about us?</Label>
-                                        <Input type="text" id="referred" name="referred" placeholder="Website, event or reference"                        value={this.state.referred}
-                                        invalid={errors.referred}
-                                        onBlur={this.handleBlur("referred")}
-                                        onChange={this.handleInputChange} />
+                                        <Input 
+                                            type="text" 
+                                            id="referred" 
+                                            name="referred" 
+                                            placeholder="Website, event or reference"
+                                            value={this.state.referred}
+                                            invalid={errors.referred}
+                                            onBlur={this.handleBlur("referred")}
+                                            onChange={this.handleInputChange} 
+                                        />
                                     <FormFeedback>{errors.referred}</FormFeedback>
                                     </Col>
                                 </FormGroup>
