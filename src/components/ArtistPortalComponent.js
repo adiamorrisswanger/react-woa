@@ -35,7 +35,7 @@ function ArtistPortal(props) {
         }
     );    
     return (
-        <div className="container">
+        <div className="container artistportal-div">
             <div className="row">
                 <div className="col">
                     <h2>Artist Portal</h2>
