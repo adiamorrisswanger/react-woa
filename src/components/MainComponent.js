@@ -16,16 +16,21 @@ class Main extends Component {
         this.state = {
             units: UNITS,
             calenders: CALENDERS
-        }
+        };
     }
 
     render() {
 
         const HomePage = () => {
             return (
-                <Home />
+                <Home 
+                unit={this.state.units.filter(unit => unit.featured)[0]}                
+                calender={this.state.calenders.filter(calender => calender.featured)[0]}
+                calender2={this.state.calenders.filter(calender => calender.featured)[1]}
+                />
+    
             );
-        }
+        };
 
         return(
             <div>

@@ -25,7 +25,7 @@ export const UNITS = [
         name: "Marketing",
         image: "../images/04_WoA_2020-MarketingCover.png",
         description: "Define your product, discover your target audience, make decisions about how to sell your work, and identify a budget and strategy for your artistic business.",
-        featured: true
+        featured: false
     },
     {
         id: 4,
@@ -67,7 +67,7 @@ export const UNITS = [
         name: "Grant Writing",
         image: "../images/10_WoA_2020-GrantWritingCover.png",
         description: "Learn the essentials of grant writing along with resources for searching and structuring your grants.",
-        featured: true
+        featured: false
     },
     {
         id: 10,

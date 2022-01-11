@@ -37,7 +37,7 @@ function RenderEvents({calender}) {
                             <h2 class="h2-date">{calender.date}</h2>
                         </CardTitle>
                         <CardBody>
-                            <h5 className="card-title">{calender.title}</h5>
+                            <h5 className="card-title">{calender.name}</h5>
                             <p className="card-text">{calender.description}</p>
                         </CardBody>
                     </Card>
