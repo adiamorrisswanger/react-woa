@@ -90,6 +90,10 @@ label {
   background-color: #f7f7f7;
 }
 
+.card-link {
+  text-decoration: none;
+  color: #000
+}
 
 /* FONTS */
 

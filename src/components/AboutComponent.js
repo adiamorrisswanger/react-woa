@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About(props) {
+function About() {
     return (
         <React.Fragment>
             <div className="container about-div">
@@ -8,7 +8,7 @@ function About(props) {
                 <hr />
                 <div className="row">
                     <div className="col">
-                        <img className="img-fluid" src="../../images/butterflypuppets.jpg" />
+                        <img className="img-fluid" src="../../images/butterflypuppets.jpg" alt="Butterfly Puppets"/>
                     </div>
                     <div className="col-md-6 col-lg-8 align-self-center">
                         <p>Springboard’s Work of Art: Business Skills for Artists is a professional development curriculum designed to teach business skills to artists in all disciplines — visual, performing and literary arts. Artists can take the whole series, customized combinations, or individual workshops that best suit their needs, and the curriculum is available for people interested in leading the workshops and offering professional development resources.</p>

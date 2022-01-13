@@ -4,6 +4,7 @@ export const UNITS = [
         name: "Career Planning",
         image: "/images/02_WoA_2020-CareerPlnngCover.png",
         description: "Where do you want to be: artistically and professionally? Learn how to define your values, identify key choices, and develop a plan to achieve career goals.",
+        longDescription: "Dream Big\nIt's ok to have big dreams for your career. As the saying goes, 'Shoot for the moon. Even if you miss, you'll land among the starts.'\nThis first part of this unit will guide you through identifying your version of success.\nDefine Your Goals\nThe next part of this unit takes those big dreams and breaks them down into major goal categories.\nCreate Action Steps\nThis is where the rubber meets the road. Take those big goals and break them down into time bound action steps, creating your own map to success.\nTake Action\nhe final part of this unit invites you to start - tomorrow - on the plan you just created.",
         featured: true
     },
     {

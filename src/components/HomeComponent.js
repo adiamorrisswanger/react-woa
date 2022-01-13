@@ -1,16 +1,20 @@
 import React from 'react';
 import { Button, Card, CardText, CardBody, CardTitle, CardImg } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function RenderUnit({unititem}) {
     return (
-        <Card>
-            <CardBody>
-                <CardImg width="100%" src={unititem.image} alt={unititem.name} />
-                <CardText>{unititem.description}</CardText>
-                <Button className="btn-block">CHECK IT OUT</Button>
-            </CardBody>
-        </Card>
+        <Link to={`/artistportal/${unititem.id}`} className="card-link">
+            <Card>
+                <CardBody>
+                    <CardImg width="100%" src={unititem.image} alt={unititem.name} />
+                    <CardText>{unititem.description}</CardText>
+                    <Button className="btn-block">CHECK IT OUT</Button>
+                </CardBody>
+            </Card>
+        </Link>
+        
     );
 }
 
@@ -44,13 +48,13 @@ function Home(props){
         <React.Fragment>
                 <div className="row">
                     <div className="col-6 art-portal-link py-3">
-                        <NavLink className="nav-link mx-2 portal-nav-link" to="/home">
+                        <NavLink className="nav-link mx-2 portal-nav-link" to="/artistportal">
                             ARTIST PORTAL
                         </NavLink>
                     </div>
                     <div className="col-6 org-portal-link py-3">
                         <NavLink className="nav-link mx-2 portal-nav-link" to="/home">
-                            ORGANIZATION PORTAL
+                            ORGANIZATION PORTAL (Coming Soon)
                         </NavLink>
                     </div>
                 </div>
