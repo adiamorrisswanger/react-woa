@@ -36,7 +36,7 @@ class Main extends Component {
         const UnitWithId = ({match}) => {
             return (
               <UnitInfo 
-                unit={this.props.unit.filter(unit => unit.id === +match.params.unitId)[0]}
+                unit={this.state.units.filter(unit => unit.id === +match.params.unitId)[0]}
                 />
             );
           }
@@ -46,8 +46,10 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route path='/artistportal' render={() => <ArtistPortal units={this.state.units}/> } />
-                    <Route path='/artistportal/:unitId' component={UnitWithId} />
+                    <Route path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } > 
+                        
+                    </Route>
+                    <Route path='/:unitId' component={UnitWithId} />
                     <Route path='/events' render={() => <Events calenders={this.state.calenders}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'component={Contact} />

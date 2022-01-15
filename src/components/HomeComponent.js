@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function RenderUnit({unititem}) {
     return (
-        <Link to={`/artistportal/${unititem.id}`} className="card-link">
+        <Link to={`/${unititem.id}`} className="card-link">
             <Card>
                 <CardBody>
                     <CardImg width="100%" src={unititem.image} alt={unititem.name} />
