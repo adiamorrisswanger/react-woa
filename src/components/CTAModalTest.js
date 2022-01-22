@@ -21,40 +21,10 @@ class CTAModalTest extends Component{
             
         };
         
-        this.modal = [
-            {
-                buttonText: 'Join Now',
-                reactId: 'cta',
-                modalText: 'Sign up for interactive content, exercises, and games to strengthen your creative business!'
-            },
-        ]
-
-        this.handleClose = this.handleClose.bind(this);
-        this.handleShow = this.handleShow.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    renderModal() {
-        return this.modal.map(modal => {
-            return (
-                <Row key={modal.reactId}>
-                    <Col>
-                        <Button onClick={() => this.handleShow(modal.reactId)}>
-                            <h1>{modal.buttonText}</h1>
-                        </Button>
-                        <Modal
-                            show={this.state.show === modal.reactId} onHide={this.handleClose}>
-                                <ModalHeader closeButton close={this.handleClose}></ModalHeader>
-                                <ModalBody>
-                                    <p>{modal.modalText}</p>
-                                </ModalBody>
-                            </Modal>
-                    </Col>
-                </Row>
-            )
-        })
-    }
 
     validate(firstName, lastName, emailAddress, referred) {
 
@@ -95,6 +65,8 @@ class CTAModalTest extends Component{
         return errors;
     }
 
+
+    
     handleBlur = (field) => () => {
         this.setState({
             touched: {...this.state.touched, [field]: true}
@@ -118,24 +90,13 @@ class CTAModalTest extends Component{
     }
 
 
-
-    handleClose() {
-        this.setState({
-            show: null
-        });
-    }
-
-    handleShow(id) {
-        this.setState({show: id})
-    }
-
     render() {
 
         const errors = this.validate(this.state.firstName, this.state.lastName, this.state.emailAddress, this.state.referred); 
 
         return (
             <div>
-                {this.renderModal()}
+                
             </div>
             
         )

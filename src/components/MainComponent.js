@@ -49,7 +49,7 @@ class Main extends Component {
                     <Route path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } > 
                         
                     </Route>
-                    <Route path='/:unitId' component={UnitWithId} />
+                    
                     <Route path='/events' render={() => <Events calenders={this.state.calenders}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'component={Contact} />
