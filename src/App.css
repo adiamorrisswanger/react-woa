@@ -37,6 +37,11 @@
   border: none;
 }
 
+.btn-orange:visited {
+  background-color: rgb(245, 165, 79);
+  border: none;
+}
+
 .navbar > .container {
   margin: 0;
 }
@@ -106,6 +111,11 @@ h2 {
   color: #F78F1E;
 }
 
+.h2-card {
+  padding: 3% 0 3% 3%;
+  text-align: center
+}
+
 h5,
 h3 {
   color: #6CC15A;
@@ -148,3 +158,5 @@ h4 {
   background-color: #146686;
   color: #fff;
 }
+
+/* Cards */
