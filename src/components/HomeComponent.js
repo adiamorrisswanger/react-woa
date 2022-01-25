@@ -8,7 +8,7 @@ function RenderUnit({unititem}) {
     
         <Card>
             <CardImg width="100%" src={unititem.image} alt={unititem.name} />
-            <CardBody class="text-white p-4 px-3">
+            <CardBody class="text-white p-4 px-3 featured-card">
                 <CardText>{unititem.description}</CardText>
                 <Button className="btn-block">CHECK IT OUT</Button>
             </CardBody>
