@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardTitle, CardBody, CardImg } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-
+ 
 
 function RenderUnits({unit}) {
     return (
@@ -10,7 +10,7 @@ function RenderUnits({unit}) {
                 <div className="row ">
                     <div className="col">
                             <Card>
-                                <Link to={`/${unit.id}`} className="card-link" >
+                                <Link to={`/artistportal/${unit.id}`} className="card-link" >
                                     <CardImg width="100%" src={unit.image} alt={unit.name} />
                                     <CardTitle>
                                         <h2>{unit.name}</h2>

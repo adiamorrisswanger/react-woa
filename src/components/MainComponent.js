@@ -32,7 +32,7 @@ class Main extends Component {
     
             );
         };
-
+//Trying to figure out how to nest routing.
         const UnitWithId = ({match}) => {
             return (
               <UnitInfo 
@@ -46,11 +46,9 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } > 
-                        
-                    </Route>
-                    
-                    <Route path='/events' render={() => <Events calenders={this.state.calenders}/> } />
+                    <Route exact path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } /> 
+                    <Route path='/artistportal/:unitId' component={UnitWithId} />
+                    <Route exact path='/events' render={() => <Events calenders={this.state.calenders}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'component={Contact} />
                     <Redirect to='/home'/>
