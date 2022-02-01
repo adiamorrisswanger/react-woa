@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardBody } from 'reactstrap';
+import { Card, CardTitle, CardBody, Button } from 'reactstrap';
 
 function Events(props) {
     const eventDirectory = props.calenders.map(calender => {
@@ -34,11 +34,12 @@ function RenderEvents({calender}) {
                 <div className="row">
                     <Card className="col-md-12 p-3 bg-ltgrey">
                         <CardTitle>
-                            <h2 class="h2-date">{calender.date}</h2>
+                            <h2 class="h2-date ml-3 my-0 mt-2">{calender.date}</h2>
                         </CardTitle>
                         <CardBody>
                             <h5 className="card-title">{calender.name}</h5>
                             <p className="card-text">{calender.description}</p>
+                            <a href={calender.link}><Button class="btn btn-orange text-white">Learn More</Button></a>
                         </CardBody>
                     </Card>
                 </div>

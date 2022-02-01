@@ -5,71 +5,45 @@ import { Link } from 'react-router-dom';
 
 function RenderUnit({unititem}) {
     return (
-        <Link to={`/${unititem.id}`} className="card-link">
-            <Card>
-                <CardBody>
-                    <CardImg width="100%" src={unititem.image} alt={unititem.name} />
-                    <CardText>{unititem.description}</CardText>
-                    <Button className="btn-block">CHECK IT OUT</Button>
-                </CardBody>
-            </Card>
-        </Link>
+    
+        <Card>
+            <CardImg width="100%" src={unititem.image} alt={unititem.name} />
+            <CardBody class="text-white p-4 px-3 featured-card">
+                <CardText>{unititem.description}</CardText>
+                <Button className="btn-block">CHECK IT OUT</Button>
+            </CardBody>
+        </Card>
         
     );
 }
 
 function RenderCalender({calitem}) {
     return (
-        <Card className="mb-3">
+        <Card className="mb-3 bg-ltgrey">
             <CardBody>
                 <CardTitle><h2>{calitem.date}</h2></CardTitle>
                 <CardTitle><h5>{calitem.name}</h5></CardTitle>
                 <CardText>{calitem.description}</CardText>
+                <a href={calitem.link}><Button class="btn btn-orange text-white">Learn More</Button></a>
             </CardBody>
         </Card>
     );
 }
 
-function RenderCalender2({calitem2}) {
-    return (
-        <Card className="mb-3">
-            <CardBody>
-                <CardTitle><h2>{calitem2.date}</h2></CardTitle>
-                <CardTitle><h5>{calitem2.name}</h5></CardTitle>
-                <CardText>{calitem2.description}</CardText>
-            </CardBody>
-        </Card>
-    );
-}
 
 function Home(props){
 
     return (
         <React.Fragment>
-                <div className="row">
-                    <div className="col-6 art-portal-link py-3">
-                        <NavLink className="nav-link mx-2 portal-nav-link" to="/artistportal">
-                            ARTIST PORTAL
-                        </NavLink>
-                    </div>
-                    <div className="col-6 org-portal-link py-3">
-                        <NavLink className="nav-link mx-2 portal-nav-link" to="/home">
-                            ORGANIZATION PORTAL (Coming Soon)
-                        </NavLink>
-                    </div>
-                </div>
             <div className="container home-div">
                 <div className="row">
                     <div className="col-md-4">
-                        <h2>Featured Unit</h2>
-                        <hr />
+                        <h2 class="text-center">Featured Unit</h2>
                         <RenderUnit unititem={props.unit} />
                     </div>
                     <div className="col-md-8">
-                        <h2>NEXT CALENDER EVENT</h2>
-                        <hr />
+                        <h2 class="text-center">NEXT CALENDER EVENT</h2>
                         <RenderCalender calitem={props.calender} />
-                        <RenderCalender2 calitem2={props.calender2} />
                     </div>
                 </div>
             </div>
