@@ -6,17 +6,20 @@ import Events from './EventsComponent';
 import Contact from './ContactComponent';
 import Footer from './FooterComponent';
 import ArtistPortal from './ArtistPortalComponent';
+import OrgPortal from './OrgPortalComponent';
 import UnitInfo from './UnitInfoComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { UNITS } from '../shared/units.js';
 import { CALENDERS } from '../shared/calenders.js';
+import { CURRENT_WORKSHOPS } from '../shared/currentworkshops';
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
             units: UNITS,
-            calenders: CALENDERS
+            calenders: CALENDERS,
+            currentWorkshops: CURRENT_WORKSHOPS
         };
     }
 
@@ -32,7 +35,7 @@ class Main extends Component {
     
             );
         };
-//Trying to figure out how to nest routing.
+
         const UnitWithId = ({match}) => {
             return (
               <UnitInfo 
@@ -48,6 +51,7 @@ class Main extends Component {
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } /> 
                     <Route path='/artistportal/:unitId' component={UnitWithId} />
+                    <Route path='/orgportal' component={OrgPortal} />
                     <Route exact path='/events' render={() => <Events calenders={this.state.calenders}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'component={Contact} />
