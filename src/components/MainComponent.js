@@ -11,7 +11,7 @@ import UnitInfo from './UnitInfoComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { UNITS } from '../shared/units.js';
 import { CALENDERS } from '../shared/calenders.js';
-import { CURRENT_WORKSHOPS } from '../shared/currentworkshops';
+import { CURRENT } from '../shared/currentworkshops';
 
 class Main extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class Main extends Component {
         this.state = {
             units: UNITS,
             calenders: CALENDERS,
-            currentWorkshops: CURRENT_WORKSHOPS
+            current: CURRENT
         };
     }
 
@@ -51,7 +51,7 @@ class Main extends Component {
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } /> 
                     <Route path='/artistportal/:unitId' component={UnitWithId} />
-                    <Route path='/orgportal' component={OrgPortal} />
+                    <Route path='/orgportal' render={() => <OrgPortal current={this.state.current} /> } />
                     <Route exact path='/events' render={() => <Events calenders={this.state.calenders}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'component={Contact} />

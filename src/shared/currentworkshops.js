@@ -1,4 +1,4 @@
-export const CURRENT_WORKSHOPS = [
+export const CURRENT = [
     {
         id: 0,
         name: 'E-Commerce Panel',
