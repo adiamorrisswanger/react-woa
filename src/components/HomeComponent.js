@@ -38,12 +38,12 @@ function Home(props){
             <div className="container home-div">
                 <div className="row">
                     <div className="col-md-4">
-                        <h2 class="text-center">Featured Unit</h2>
+                        <h2 className="text-center">Featured Unit</h2>
                         <hr></hr>
                         <RenderUnit unititem={props.unit} />
                     </div>
                     <div className="col-md-8">
-                        <h2 class="text-center">NEXT CALENDER EVENT</h2>
+                        <h2 className="text-center">NEXT CALENDER EVENT</h2>
                         <hr></hr>
                         <RenderCalender calitem={props.calender} />
                     </div>

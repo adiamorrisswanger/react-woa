@@ -9,11 +9,14 @@ class Header extends Component {
     constructor(props) {
         super(props);
 
-        this.toggleNav = this.toggleNav.bind(this);
+        
         this.state = {
           isNavOpen: false
         };
+
+        this.toggleNav = this.toggleNav.bind(this);
     }
+
 
     toggleNav() {
         this.setState({
@@ -28,7 +31,7 @@ class Header extends Component {
                 <Navbar expand="md">
                     <div className="container">
                         <NavbarBrand href="/"><img src="/images/WoALogo-2020-SM.png" alt="Work of Art Logo" /></NavbarBrand>
-                        <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarToggler onClick={this.toggleNav}  />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
