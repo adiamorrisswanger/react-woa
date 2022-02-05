@@ -10,7 +10,7 @@ function RenderUnit({unititem}) {
             <CardImg width="100%" src={unititem.image} alt={unititem.name} />
             <CardBody className="text-white p-4 px-3 featured-card">
                 <CardText>{unititem.description}</CardText>
-                <Button className="btn-block">Check it out</Button>
+                <Link to={`/artistportal/${unititem.id}`} className="card-link" ><Button className="btn-block">CHECK IT OUT</Button></Link>
             </CardBody>
         </Card>
         

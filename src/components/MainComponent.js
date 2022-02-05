@@ -6,17 +6,20 @@ import Events from './EventsComponent';
 import Contact from './ContactComponent';
 import Footer from './FooterComponent';
 import ArtistPortal from './ArtistPortalComponent';
+import OrgPortal from './OrgPortalComponent';
 import UnitInfo from './UnitInfoComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { UNITS } from '../shared/units.js';
 import { CALENDERS } from '../shared/calenders.js';
+import { CURRENT } from '../shared/currentworkshops';
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
             units: UNITS,
-            calenders: CALENDERS
+            calenders: CALENDERS,
+            current: CURRENT
         };
     }
 
@@ -45,11 +48,10 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } > 
-                        
-                    </Route>
-                    
-                    <Route path='/events' render={() => <Events calenders={this.state.calenders}/> } />
+                    <Route exact path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } /> 
+                    <Route path='/artistportal/:unitId' component={UnitWithId} />
+                    <Route path='/orgportal' render={() => <OrgPortal current={this.state.current} /> } />
+                    <Route exact path='/events' render={() => <Events calenders={this.state.calenders}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'component={Contact} />
                     <Redirect to='/home'/>

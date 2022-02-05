@@ -7,7 +7,7 @@ function Footer(props) {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-4 pt-3">
-                        <img className="img-fluid" src="/images/SpringboardLogo_3color.png" width="80%"/>
+                        <img className="img-fluid" src="/images/SpringboardLogo_3color.png" width="80%" alt="Springboard Logo"/>
                     </div>
                     <div className="col-sm-4">
                         <h4>Navigation</h4>

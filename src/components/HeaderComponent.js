@@ -2,7 +2,7 @@ import React, { Component }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import CTA from './CTAComponent';
-import CTAModalTest from './CTAModalTest';
+
 
 class Header extends Component {
     
@@ -27,7 +27,7 @@ class Header extends Component {
 
                 <Navbar expand="md">
                     <div className="container">
-                        <NavbarBrand href="/"><img src="/images/WoALogo-2020-SM.png" alt="NuCamp Logo" /></NavbarBrand>
+                        <NavbarBrand href="/"><img src="/images/WoALogo-2020-SM.png" alt="Work of Art Logo" /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -39,6 +39,11 @@ class Header extends Component {
                                 <NavItem>
                                     <NavLink className="nav-link mx-2" to="/artistportal">
                                         Artist Portal
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link mx-2" to="/orgportal">
+                                        Organizations Portal
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
