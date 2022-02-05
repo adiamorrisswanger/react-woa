@@ -8,9 +8,9 @@ function RenderUnit({unititem}) {
     
         <Card>
             <CardImg width="100%" src={unititem.image} alt={unititem.name} />
-            <CardBody class="text-white p-4 px-3 featured-card">
+            <CardBody className="text-white p-4 px-3 featured-card">
                 <CardText>{unititem.description}</CardText>
-                <Button className="btn-block">CHECK IT OUT</Button>
+                <Button className="btn-block">Check it out</Button>
             </CardBody>
         </Card>
         
@@ -24,7 +24,7 @@ function RenderCalender({calitem}) {
                 <CardTitle><h2>{calitem.date}</h2></CardTitle>
                 <CardTitle><h5>{calitem.name}</h5></CardTitle>
                 <CardText>{calitem.description}</CardText>
-                <a href={calitem.link}><Button class="btn btn-orange text-white">Learn More</Button></a>
+                <a href={calitem.link}><Button className="btn btn-orange text-white">Learn More</Button></a>
             </CardBody>
         </Card>
     );

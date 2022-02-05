@@ -14,36 +14,36 @@ function Footer(props) {
                         <NavLink className="nav-link mx-2" to="/home">
                             Home
                         </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
-                            About Work of Art
-                        </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        <NavLink className="nav-link mx-2" to="/artistportal">
                             Artist Portal
                         </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        <NavLink className="nav-link mx-2" to="/about">
+                            About Work of Art
+                        </NavLink>
+                        <NavLink className="nav-link mx-2" to="/events">
                             Upcoming Events
                         </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        <NavLink className="nav-link mx-2" to="/contact">
                             Contact Us
                         </NavLink>
                     </div>
                     <div className="col-sm-4">
                         <h4>Springboard for the Arts</h4>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        <a className="nav-link" target="_blank" href="https://springboardforthearts.org/">
                             Springboard Home
-                        </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        </a>
+                        <a className="nav-link" target="_blank" href="https://springboardforthearts.org/work-with-artists/overview/">
                             Connect to Artists
-                        </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        </a>
+                        <a className="nav-link" target="_blank" href="https://springboardforthearts.org/jobs/">
                             Job Board
-                        </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        </a>
+                        <a className="nav-link" target="_blank" href="https://springboardexchange.org/">
                             Creative Exchange
-                        </NavLink>
-                        <NavLink className="nav-link mx-2" to="/home">
+                        </a>
+                        <a className="nav-link" target="_blank" href="https://springboardforthearts.org/professional-growth/springboard-resource-centers/">
                             Resource Center
-                        </NavLink>
+                        </a>
                     </div>
                 </div>
                 <hr />
