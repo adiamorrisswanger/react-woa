@@ -8,7 +8,7 @@ function RenderUnitInfo({unit}) {
     return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-3 mt-2">
                             <img src={unit.image} width="100%" alt={unit.name} />
                     </div>
                     <div className="col-md-9">
@@ -42,8 +42,8 @@ function UnitInfo(props) {
                     </BreadcrumbItem>
                 </Breadcrumb>
             
-                <div className="container">
-                    <div className="row">
+                <div className="container unit-div">
+                    <div className="row unit-name">
                         <h2>{props.unit.name}</h2>
                     </div>
                     <div className="row">

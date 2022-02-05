@@ -76,8 +76,9 @@ nav {
 .about-div,
 .calender-div,
 .artistportal-div,
-.home-div {
-  padding: 25px;
+.home-div,
+.unit-div {
+  padding: 50px;
 }
 
 .ul-about {
@@ -163,4 +164,11 @@ h4 {
 
 .featured-card {
   background-color: #146686;;
+}
+
+/* Units */
+
+.unit-name {
+  padding-bottom: 2%;
+  text-align: center;
 }

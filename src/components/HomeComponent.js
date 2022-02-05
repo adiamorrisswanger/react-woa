@@ -10,7 +10,7 @@ function RenderUnit({unititem}) {
             <CardImg width="100%" src={unititem.image} alt={unititem.name} />
             <CardBody className="text-white p-4 px-3 featured-card">
                 <CardText>{unititem.description}</CardText>
-                <Link to={`/artistportal/${unititem.id}`} className="card-link" ><Button className="btn-block">CHECK IT OUT</Button></Link>
+                <Link to={`/artistportal/${unititem.id}`} className="card-link" ><Button className="btn-block">Check It Out</Button></Link>
             </CardBody>
         </Card>
         
@@ -39,10 +39,12 @@ function Home(props){
                 <div className="row">
                     <div className="col-md-4">
                         <h2 class="text-center">Featured Unit</h2>
+                        <hr></hr>
                         <RenderUnit unititem={props.unit} />
                     </div>
                     <div className="col-md-8">
                         <h2 class="text-center">NEXT CALENDER EVENT</h2>
+                        <hr></hr>
                         <RenderCalender calitem={props.calender} />
                     </div>
                 </div>
