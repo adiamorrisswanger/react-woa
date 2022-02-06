@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Card, CardText, CardBody, CardTitle, CardImg } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function RenderUnit({unititem}) {

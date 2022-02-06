@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Button, Input } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import CTA from './CTAComponent';
 
@@ -31,7 +31,7 @@ class Header extends Component {
         });
     }
 
-    handleLogin() {
+    handleLogin(event) {
         alert(`Username: ${this.username.value} Password: ${this.password.value} Remember: ${this.remember.checked}`);
         this.toggleModal();
         event.preventDefault();
