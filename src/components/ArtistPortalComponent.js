@@ -6,30 +6,25 @@ import { Link } from 'react-router-dom';
 
 function RenderUnits({unit}) {
     return (
-            <div className="container">
-                <div className="row ">
-                    <div className="col">
-                            <Card>
-                                <Link to={`/artistportal/${unit.id}`} className="card-link" >
-                                    <CardImg width="100%" src={unit.image} alt={unit.name} />
-                                    <CardTitle>
-                                        <h2 class="h2-card">{unit.name}</h2>
-                                    </CardTitle>
-                                    <CardBody>
-                                        {unit.description}
-                                    </CardBody>
-                                </Link>
-                            </Card>
-                    </div>
-                </div>
-            </div>
+        <Card>
+            <Link to={`/artistportal/${unit.id}`} className="card-link" >
+                <CardImg width="100%" src={unit.image} alt={unit.name} />
+                <CardTitle>
+                    <h2 class="h2-card">{unit.name}</h2>
+                </CardTitle>
+                <CardBody>
+                    {unit.description}
+                </CardBody>
+            </Link>
+        </Card>
+     
     )
 }
 
 function ArtistPortal(props) {   
     const unitDirectory = props.units.map(unit => {
         return (
-            <div key={unit.id} className="col-md-4 mb-4 mx-auto">
+            <div key={unit.id} className="col-md-4 mb-4 mx-auto d-flex align-items-strech">
                 <RenderUnits unit={unit} />
             </div>
             );
