@@ -42,7 +42,7 @@ class Header extends Component {
             <React.Fragment>
 
                 <Navbar expand="md">
-                    <div className="container">
+                    <div className="container mx-auto">
                         <NavbarBrand href="/"><img src="/images/WoALogo-2020-SM.png" alt="Work of Art Logo" /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}  />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
