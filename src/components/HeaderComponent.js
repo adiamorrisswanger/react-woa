@@ -58,11 +58,6 @@ class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link mx-2" to="/orgportal">
-                                        Organization Portal
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
                                     <NavLink className="nav-link mx-2" to="/about">
                                         About
                                     </NavLink>

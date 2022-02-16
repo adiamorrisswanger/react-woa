@@ -17,9 +17,6 @@ function Footer(props) {
                         <NavLink className="nav-link mx-2" to="/artistportal">
                             Artist Portal
                         </NavLink>
-                        <NavLink className="nav-link mx-2" to="/orgportal">
-                            Organization Portal
-                        </NavLink>
                         <NavLink className="nav-link mx-2" to="/about">
                             About Work of Art
                         </NavLink>

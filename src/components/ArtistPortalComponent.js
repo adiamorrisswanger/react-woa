@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, CardImg, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardTitle, CardBody, CardImg, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
  
@@ -7,15 +7,13 @@ import { Link } from 'react-router-dom';
 function RenderUnits({unit}) {
     return (
         <Card>
-            <Link to={`/artistportal/${unit.id}`} className="card-link" >
-                <CardImg width="100%" src={unit.image} alt={unit.name} />
-                <CardTitle>
-                    <h2 class="h2-card">{unit.name}</h2>
-                </CardTitle>
+            <a href={`/artistportal/${unit.id}`}><CardImg width="100%" src={unit.image} alt={unit.name} /></a>
                 <CardBody>
-                    {unit.description}
+                <CardTitle>
+                    <a href={`/artistportal/${unit.id}`}><Button className="btn-orange btn-block btn-unit text-white">{unit.name}</Button></a>
+                </CardTitle>
+                    <p className="p-unit-descript">{unit.description}</p>            
                 </CardBody>
-            </Link>
         </Card>
      
     )
@@ -56,6 +54,7 @@ function ArtistPortal(props) {
                         {unitDirectory}
                 </div>
             </div>
+
         </React.Fragment>
         
     );

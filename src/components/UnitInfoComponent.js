@@ -10,7 +10,7 @@ function RenderUnitInfo({unit}) {
                 <div className="row">
                     <div className="col-md-3 mt-2">
                             <img src={unit.image} className="unit-img" width="100%" alt={unit.name} />
-                            <Button className="btn btn-orange text-white mt-2 btn-block">Login to Download</Button>
+                            <p className="p-small-warning"> You must login to download the unit.</p>
                     </div>
                     <div className="col-md-9">
                         <h4 className="unit-h4">{unit.title1}</h4>

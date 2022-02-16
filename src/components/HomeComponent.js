@@ -52,9 +52,9 @@ function Home(props){
                     </div>
                     <div className="org-portal-link col-sm-6">
                         <nav className="portal-nav">
-                            <NavLink className="nav-link portal-nav-link" to="/orgportal">
+                            <a href="https://springboardforthearts.org/" className="nav-link portal-nav-link">
                                 Organization Portal
-                            </NavLink>
+                            </a>
                         </nav>
                     </div>
                 </div>
