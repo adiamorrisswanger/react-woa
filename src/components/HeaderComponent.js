@@ -59,7 +59,7 @@ class Header extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link mx-2" to="/orgportal">
-                                        Organizations Portal
+                                        Organization Portal
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -79,7 +79,7 @@ class Header extends Component {
                                 </NavItem>
                             </Nav>
                             <span className="navbar-text ml-auto">
-                                <Button onClick={this.toggleModal}>
+                                <Button onClick={this.toggleModal} className="btn-orange">
                                     <i className="fa fa-sign-in" /> Login
                                 </Button>
                             </span>
