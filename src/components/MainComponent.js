@@ -9,7 +9,7 @@ import ArtistPortal from './ArtistPortalComponent';
 import OrgPortal from './OrgPortalComponent';
 import UnitInfo from './UnitInfoComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { fetchUnits, loginUser, logoutUser } from '../redux/ActionCreators';
+// import { fetchUnits, loginUser, logoutUser } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
