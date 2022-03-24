@@ -2,19 +2,19 @@ import React from 'react';
 import { Card, CardTitle, CardBody, CardImg, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderFeatured({current}) {
+function RenderFeatured({currentworkshop}) {
     return (
         <div className="container">
             <div className="row">
                 <div className="col md-3">
                     <Card>
                         <CardTitle>
-                            <h2 class="h2-card">{current.name}</h2>
+                            <h2 class="h2-card">{currentworkshop.name}</h2>
                         </CardTitle>
                         <CardBody>
-                            {current.description}
+                            {currentworkshop.description}
                         </CardBody>
-                        <CardImg width="100%" src={current.image} alt={current.name} />
+                        <CardImg width="100%" src={currentworkshop.image} alt={currentworkshop.name} />
                     </Card>
                 </div>
             </div>
@@ -24,11 +24,11 @@ function RenderFeatured({current}) {
 
 function OrgPortal(props) {
 
-    const orgFeatured = props.current.map(current => {
-        if(current.featured) {
+    const orgFeatured = props.currentworkshop.map(currentworkshop => {
+        if(currentworkshop.featured) {
             return (
-                <div key={current.id} className="col-md-4 mb-4 mx-auto">
-                    <RenderFeatured current={current} />
+                <div key={currentworkshop.id} className="col-md-4 mb-4 mx-auto">
+                    <RenderFeatured currentworkshop={currentworkshop} />
                 </div>
             );
         }
