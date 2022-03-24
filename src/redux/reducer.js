@@ -1,4 +1,4 @@
-import { CALENDERS, CALENDERS } from '../shared/calenders';
+import { CALENDERS } from '../shared/calenders';
 import { CURRENTWORKSHOPS } from '../shared/currentworkshops';
 import { UNITS } from '../shared/units';
 
