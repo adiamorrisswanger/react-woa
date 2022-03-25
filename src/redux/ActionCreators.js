@@ -38,6 +38,27 @@ export const addUnits = units => ({
     payload: units
 })
 
+export const requestLogin = creds => {
+    return {
+        type: ActionTypes.LOGIN_REQUEST,
+        creds
+    }
+}
+
+export const receiveLogin = response => {
+    return {
+        type: ActionTypes.LOGIN_SUCCESS,
+        token: response.token
+    }
+}
+  
+export const loginError = message => {
+    return {
+        type: ActionTypes.LOGIN_FAILURE,
+        message
+    }
+}
+
 export const loginUser = creds => dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds))
@@ -95,6 +116,5 @@ export const logoutUser = () => dispatch => {
     dispatch(requestLogout())
     localStorage.removeItem('token');
     localStorage.removeItem('creds');
-    dispatch(favoritesFailed('Error 401: Unauthorized'));
     dispatch(receiveLogout())
 }

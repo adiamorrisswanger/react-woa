@@ -1,0 +1,258 @@
+[33mcommit 3f8197269d17db717bae11acdf0a2729be4afa21[m[33m ([m[1;36mHEAD -> [m[1;32msecondary[m[33m, [m[1;31morigin/secondary[m[33m)[m
+Merge: 7a82cb1 ff3d656
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Thu Mar 24 12:28:00 2022 -0500
+
+    Merge branch 'secondary' of https://github.com/adiamorrisswanger/react-woa into secondary
+
+[33mcommit ff3d65672934437526d1590484fd75f071d47095[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Thu Mar 24 13:26:49 2022 -0400
+
+    comment out import in main
+
+[33mcommit 7a82cb160b14cd124e578a6fd99f80d1caf6ae57[m
+Merge: aff5506 20f4077
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Thu Mar 24 12:26:01 2022 -0500
+
+    Merge branch 'secondary' of https://github.com/adiamorrisswanger/react-woa into secondary
+
+[33mcommit aff5506f756d176bfaebf473f9bcf0265433fc39[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Thu Mar 24 12:25:48 2022 -0500
+
+    ActionCreators and ActionTypes
+
+[33mcommit 20f4077ef944c9a3d12635e8f4e24aa2868a8589[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Thu Mar 24 13:23:38 2022 -0400
+
+    redux units calenders and current workshops
+
+[33mcommit c76ca7e86c342ab73065c0b7efd35da778701274[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Thu Mar 24 13:01:57 2022 -0400
+
+    Completed redux on main and app
+
+[33mcommit 9a7ea56ab3e5a97a78aa4cf13f0997299fc6517f[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Thu Mar 24 12:38:08 2022 -0400
+
+    Starting Redux
+
+[33mcommit f2a2f93c36a236c15c425fe0b0e235f3bd5c173c[m
+Author: Rachel Nurmi <86205748+RachelNurmi91@users.noreply.github.com>
+Date:   Sat Feb 19 22:51:58 2022 -0500
+
+    Update README.md
+    
+    Update
+
+[33mcommit 4f4674e66f8955029f195e1489831a20f4f6d2e7[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Wed Feb 16 01:23:49 2022 -0500
+
+    final touch ups for video
+
+[33mcommit 821b27e0b638527a6e4470bd1868eb3e89535f7a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Wed Feb 16 00:45:51 2022 -0500
+
+    CSS edits on colors and seconardy nav bar added
+
+[33mcommit 72b0b512e8d2b531dd9fe8428df62ee2788deb8a[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Tue Feb 15 09:14:55 2022 -0500
+
+    Nav Bar Placement
+
+[33mcommit bf5167dfbf8140a5751d5a8feb53eb8b45d54c3a[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Mon Feb 14 23:15:06 2022 -0600
+
+    Header Update
+
+[33mcommit f142128104338eea20a6cbcdce81102d5e305fdd[m
+Author: Rachel Nurmi <86205748+RachelNurmi91@users.noreply.github.com>
+Date:   Mon Feb 14 22:52:02 2022 -0500
+
+    Added stretch alignment for visual interest.
+
+[33mcommit d9fb1aa77e3c6c43f8fe88f537e6807310339a77[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sun Feb 6 14:52:01 2022 -0600
+
+    Login Button Part 3
+
+[33mcommit a520522fdb4cc910c599ef8f1e8806c71271f043[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sun Feb 6 14:48:38 2022 -0600
+
+    Login Button Part 2
+
+[33mcommit c68de7e43deddae9d4b958d6eaa47226a6007bc8[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sun Feb 6 14:47:42 2022 -0600
+
+    Login Button Part 1
+
+[33mcommit 7ace4380103d522c1d5fc11586739c943306a266[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sat Feb 5 00:38:25 2022 -0600
+
+    Toggler Visible
+
+[33mcommit b9da5ad18b872e486174f66f2c09007bab0fff3c[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Fri Feb 4 22:53:57 2022 -0500
+
+    Small CSS changes
+
+[33mcommit a76823f3191f80f9c276e4fb7fc3bd3b4ad4a736[m
+Merge: 32e54d0 ec9298a
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Fri Feb 4 22:26:08 2022 -0500
+
+    Small bug
+
+[33mcommit 32e54d0cd701a4c76964978b1efd4477a388a0cf[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Fri Feb 4 22:24:06 2022 -0500
+
+    Footer Navigation & Links Completed
+
+[33mcommit ec9298a2dbbfdece012f0c618f1dfc7c06e26b7b[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Thu Feb 3 23:41:41 2022 -0600
+
+    Added Featured Card to Org Portal Component
+
+[33mcommit a4dadc00204f05e12c4f33f8a9202d78517baa2a[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Thu Feb 3 23:19:21 2022 -0600
+
+    Added Org Portal Component
+
+[33mcommit 100472c25d2985d236f04cd0738e20e81aafd5d3[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Thu Feb 3 22:20:42 2022 -0600
+
+    Breadcrumbs and Footer Links
+
+[33mcommit 764524101d5acf610fe4020b7be01f3dee2e79e5[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Mon Jan 31 19:16:36 2022 -0600
+
+    Link from Home for Featured Unit
+
+[33mcommit 7bc2d215ed27f34d833a7d302f8a2852f1448060[m
+Merge: 05fb9dd 9dc9630
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Mon Jan 31 19:08:32 2022 -0600
+
+    Merge branch 'main' of https://github.com/adiamorrisswanger/react-woa
+
+[33mcommit 05fb9ddcc947dd0d877fae6968634c78cb65558d[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Mon Jan 31 19:08:01 2022 -0600
+
+    Individual page links working now
+
+[33mcommit 9dc963051aff0b3abcc2ff499a20b39937179293[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Tue Jan 25 00:07:28 2022 -0500
+
+    Featured Card BG color
+
+[33mcommit a276a359dc5bb57f70cf99bdad13b1b65b04706b[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Tue Jan 25 00:03:01 2022 -0500
+
+    Button added to Events
+
+[33mcommit f8f6683861bd51055665e10e65c72ac7c83c2938[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sat Jan 22 12:21:54 2022 -0600
+
+    Removed unitId routing b/c it was messing up other component routing.
+
+[33mcommit 74d8daa4e0fc1825b2bdb671197cbbad34da1d76[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sat Jan 15 01:07:01 2022 -0600
+
+    Playing with modals
+
+[33mcommit f17afd6a81ba5edd622fe7a5b85c9f077f0a56c4[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Fri Jan 14 23:39:38 2022 -0600
+
+    Added link for units, titles and descriptions to UNITS array
+
+[33mcommit 258704dd295083c5807799e9355af55e6f90d7f9[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Wed Jan 12 23:37:48 2022 -0600
+
+    Links to units in progress
+
+[33mcommit 7451796f21d9df0c0b984728a3f9679f42e0af9d[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Mon Jan 10 23:23:28 2022 -0600
+
+    Updates to homepage.
+
+[33mcommit 87f3b658180432d6fe227ecd06cdf9282e26250c[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Mon Jan 10 10:21:02 2022 -0600
+
+    Home Page Portal Bars
+
+[33mcommit 3aaa0c4706c910d98e6b709aa7ceb263c6f31837[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Sun Jan 9 13:38:31 2022 -0600
+
+    Modal Form Bug Fixed
+
+[33mcommit 8c83f01067ca96e7971d5f924b9f579125024e76[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Sun Jan 9 13:05:20 2022 -0600
+
+    Artist Portal merged. Modal form validation.
+
+[33mcommit 64e6ef51d5852bcc3751491719f7217788730222[m
+Merge: 60a8698 896aae3
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Sun Jan 9 12:36:41 2022 -0600
+
+    Modal edits
+
+[33mcommit 60a869883a14a14bf91e28a028fc313b5a04fb89[m
+Author: Rachel Nurmi <rachelnurmi91@gmail.com>
+Date:   Sun Jan 9 12:35:21 2022 -0600
+
+    Modal added and sign up form started
+
+[33mcommit 896aae3e2c2469be7de58aa373dee388530559b3[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Tue Jan 4 01:00:07 2022 -0600
+
+    Fixed Unit Directory image sizes and layout
+
+[33mcommit 242ed45cc06274e41731624daf6f603d51331d0a[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sun Jan 2 16:25:39 2022 -0600
+
+    Deleted Directory Component, put unit directory in Artist Portal
+
+[33mcommit e3b104bf1ad4e885e12906a56fcbb03f124f1240[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sun Jan 2 15:13:25 2022 -0600
+
+    Still don't get it.
+
+[33mcommit 4d9ed7aea8cee64ad3f20ba134302bc17c8e574d[m
+Author: Adia Morris Swanger <adiamorrisswanger@gmail.com>
+Date:   Sun Jan 2 14:49:54 2022 -0600
+
+    Th
