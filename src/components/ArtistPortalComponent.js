@@ -2,14 +2,14 @@ import React from 'react';
 import { Card, CardTitle, CardBody, CardImg, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
-
+import { baseUrl } from '../shared/baseUrl';
  
 
 function RenderUnits({unit}) {
     return (
         <Card>
             <Link to={`/artistportal/${unit.id}`} className="card-link" >
-                <CardImg width="100%" src={unit.image} alt={unit.name} />
+                <CardImg width="100%" src={baseUrl + unit.image} alt={unit.name} />
                 <CardTitle>
                     <h2 className="h2-card">{unit.name}</h2>
                 </CardTitle>

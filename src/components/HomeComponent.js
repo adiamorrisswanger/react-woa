@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card, CardText, CardBody, CardTitle, CardImg } from 'reactstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderUnit({unititem, isLoading, errMess}) {
     if (isLoading) {
@@ -11,6 +12,7 @@ function RenderUnit({unititem, isLoading, errMess}) {
         return <h4>{errMess}</h4>;
     }
         return (
+            
             <React.Fragment>
                 <Card>
                 <CardImg width="100%" src={unititem.image} alt={unititem.name} />
@@ -24,9 +26,10 @@ function RenderUnit({unititem, isLoading, errMess}) {
             </React.Fragment>
     
         );
+        
     }
 
-function RenderCalender({calitem, isLoading, errMess}) {
+function RenderCalendar({calitem, isLoading, errMess}) {
     if (isLoading) {
         return <Loading />;
     }
@@ -49,7 +52,9 @@ function RenderCalender({calitem, isLoading, errMess}) {
 }
 
 
-function Home(props){
+function Home(props) {
+
+    console.log(props.calendar)
 
 return (
     <React.Fragment>
@@ -85,14 +90,18 @@ return (
                 </div>
                 <div className="row">
                     <div className="col-lg-4 d-flex align-items-stretch">
-                        <RenderUnit unititem={props.unit} />
+                        <RenderUnit 
+                            unititem={props.unit}
+                            isLoading={props.unitsLoading}
+                            errMess={props.unitsErrMess}
+                        />
                     </div>
                     <div className="col-lg-8 d-flex align-items-stretch">
                         <hr></hr>
-                        <RenderCalender 
-                            calitem={props.calender}
-                            isLoading={props.unitsLoading}
-                            errMess={props.unitsErrMess}
+                        <RenderCalendar 
+                            calitem={props.calendar}
+                            isLoading={props.calendarLoading}
+                            errMess={props.calendarErrMess}
                          />
                     </div>
                 </div>

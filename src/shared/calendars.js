@@ -1,4 +1,4 @@
-export const CALENDERS = [
+export const CALENDARS = [
     {
         id: 0,
         name: "Engaging Customers and Selling Your Work",

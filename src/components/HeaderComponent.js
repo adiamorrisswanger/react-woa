@@ -8,10 +8,13 @@ class Header extends Component {
         super(props);
         
         this.state = {
-          isNavOpen: false
+          isNavOpen: false,
+          isModalOpen: false
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
     toggleNav() {
         this.setState({
@@ -23,19 +26,16 @@ class Header extends Component {
             isModalOpen: !this.state.isModalOpen
         });
     }
-    handleLogin = async e => {
-        e.preventDefault();
-        const response = await fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ post: this.state.post }),
-        });
-        const body = await response.text();
-
-        this.setState({responseToPost: body});
+    handleLogin(event) {
+        this.toggleModal();
+        this.props.loginUser({username: this.username.value, password: this.password.value});
+        event.preventDefault();
     }
+
+    handleLogout() {
+        this.props.logoutUser();
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -77,9 +77,28 @@ class Header extends Component {
                                 </NavItem>
                             </Nav>
                             <span className="navbar-text ml-auto">
-                            <Button onClick={this.toggleModal} className="btn-orange">
+                                { !this.props.auth.isAuthenticated 
+                                    ?  
+                                    <Button onClick={this.toggleModal} className="btn-orange">
                                     <i className="fa fa-sign-in" /> Login
-                                </Button>
+                                    {this.props.auth.isFetching
+                                        ? <span className='fa fa-spinner fa-pulse fa-fw' />
+                                        : null
+                                    }
+                                </Button> 
+                                : 
+                                <div>
+                                    <div className='navbar-text mr-3'>{this.props.auth.user.username}</div>
+                                    <Button outline onClick={this.handleLogout}>
+                                                <span className="fa fa-sign-out fa-lg"></span> Logout
+                                                {this.props.auth.isFetching 
+                                                    ? <span className="fa fa-spinner fa-pulse fa-fw"/>
+                                                    : null
+                                                }
+                                            </Button>
+                                </div>
+                                }
+                           
                             </span>
                         </Collapse>
                     </div>

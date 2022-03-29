@@ -10,12 +10,14 @@ class CTA extends Component {
             isModalOpen: false,
             firstName: '',
             lastName: '',
+            username:'',
             emailAddress: '',
             organization: '',
             referred: '',
             touched: {
                 firstName: false,
                 lastName: false,
+                username: false,
                 emailAddress: false,
                 referred: false
             }
@@ -25,11 +27,12 @@ class CTA extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    validate(firstName, lastName, emailAddress, referred) {
+    validate(firstName, lastName, username, emailAddress, referred) {
 
         const errors = {
             firstName: '',
             lastName: '',
+            username: '',
             emailAddress: '',
             referred: '',
         };
@@ -47,6 +50,14 @@ class CTA extends Component {
                 errors.lastName = 'Last name must be at least 2 characters.';
             } else if (lastName.length > 15) {
                 errors.lastName = 'Last name must be 15 or less characters.';
+            }
+        }
+
+        if (this.state.touched.username) {
+            if (username.length < 2) {
+                errors.username = 'Username must be at least 2 characters.';
+            } else if (username.length > 15) {
+                errors.username = 'Username must be 15 or less characters.';
             }
         }
 
@@ -139,6 +150,20 @@ class CTA extends Component {
                                             onChange={this.handleInputChange} 
                                         />
                                     <FormFeedback>{errors.lastName}</FormFeedback>
+                                    </Col>
+                                    <Col md={6}>
+                                        <Label htmlFor="username">Username</Label>
+                                        <Input 
+                                            type="text" 
+                                            id="username" 
+                                            name="username" 
+                                            placeholder="Username"
+                                            value={this.state.username}
+                                            invalid={errors.lastName}
+                                            onBlur={this.handleBlur("username")}
+                                            onChange={this.handleInputChange} 
+                                        />
+                                        <FormFeedback>{errors.username}</FormFeedback>
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
-
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderUnitInfo({unit}) {
     
@@ -10,7 +10,7 @@ function RenderUnitInfo({unit}) {
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 mt-2">
-                            <img src={unit.image} className="unit-img" width="100%" alt={unit.name} />
+                            <img src={baseUrl + unit.image} className="unit-img" width="100%" alt={unit.name} />
                             <Button className="btn btn-orange text-white mt-2 btn-block">Login to Download</Button>
                     </div>
                     <div className="col-md-9">
@@ -71,7 +71,11 @@ function UnitInfo(props) {
                     <h2 className="unit-name">{props.unit.name}: SUMMARY</h2>
                     <hr />
                     <div className="row">
-                        <RenderUnitInfo unit={props.unit} />
+                        <RenderUnitInfo 
+                            unit={props.unit}
+                            isLoading={props.unitsLoading}
+                            errMess={props.unitsErrMess} 
+                        />
                     </div>
                 </div>
             </React.Fragment>

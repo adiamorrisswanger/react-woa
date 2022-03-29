@@ -9,10 +9,7 @@ import ArtistPortal from './ArtistPortalComponent';
 import OrgPortal from './OrgPortalComponent';
 import UnitInfo from './UnitInfoComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { UNITS } from '../shared/units.js';
-import { CALENDERS } from '../shared/calenders.js';
-import { CURRENT } from '../shared/currentworkshops.js';
-import { fetchUnits } from '../redux/ActionCreators';
+import { fetchWorkshops, loginUser, logoutUser, postContact } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 
@@ -20,27 +17,28 @@ const mapStateToProps = state => {
     return {
         units: state.units,
         calendars: state.calendars,
-        workshops: state.workshops
-    }
-}
+        workshops: state.workshops,
+        auth: state.auth
+    };
+};
 
 const mapDispatchToProps = {
-    fetchUnits: () => (fetchUnits()),
-    resetFeedbackForm: () => (actions.reset('contactForm'))
-}
+    postContact: (firstName, lastName, phoneNum, email, contactType, message) => {postContact(firstName, lastName, phoneNum, email, contactType, message)},
+    //fetchUnits: () => (fetchUnits()),
+    resetFeedbackForm: () => (actions.reset('contactForm')),
+    //fetchCalendars: () => (fetchCalendars()),
+    fetchWorkshops: () => (fetchWorkshops()),
+    loginUser: creds => (loginUser(creds)),
+    logoutUser: () => (logoutUser()),
+};
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            units: UNITS,
-            calenders: CALENDERS,
-            current: CURRENT
-        };
-    }
+   
 
     componentDidMount() {
-        this.props.fetchUnits();
+        //this.props.fetchUnits();
+        //this.props.fetchCalendars();
+        this.props.fetchWorkshops();
     }
 
     render() {
@@ -48,15 +46,17 @@ class Main extends Component {
         const HomePage = () => {
             return (
                 <Home 
-                unit={this.state.units.filter(unit => unit.featured)[0]}     
-                unitsLoading={this.state.units.isLoading}
-                unitsErrMess={this.state.units.errMess}           
-                calender={this.state.calenders.filter(calender => calender.featured)[0]}
-                addFeedback={this.props.addFeedback}
+                unit={this.props.units.units.filter(unit => unit.featured)[0]}     
+                unitsLoading={this.props.units.isLoading}
+                unitsErrMess={this.props.units.errMess}           
+                calendar={this.props.calendars.calendars.filter(calendar => calendar.featured)[0]}
+                calendarLoading={this.props.calendars.isLoading}
+                calendarErrMess={this.props.calendars.errMess}
                 />
-    
+                
             );
         };
+        //console.log(this.props.calendar);
 
         const UnitWithId = ({match}) => {
             return (
@@ -66,19 +66,35 @@ class Main extends Component {
                 errMess={this.state.units.errMess}
                 />
             );
-          }
+          };
+
+          /* const PrivateRoute = ({ component: Component, ...rest }) => (
+              <Route {...rest} render={props => (
+                  this.props.auth.isAuthenticated 
+                    ? <Component {...props} /> 
+                    : <Redirect to={{
+                        pathname: '/home',
+                        state: { from: props.location }
+                        }}
+                    />
+                )}
+            />
+          ); */
 
         return(
             <div>
-                <Header />
+                <Header 
+                    auth={this.props.auth}
+                    loginUser={this.props.loginUser}
+                    logoutUser={this.props.logoutUser}/>
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route exact path='/artistportal' render={() => <ArtistPortal units={this.state.units} /> } /> 
+                    <Route exact path='/artistportal' render={() => <ArtistPortal units={this.props.units} /> } /> 
                     <Route path='/artistportal/:unitId' component={UnitWithId} />
-                    <Route path='/orgportal' render={() => <OrgPortal current={this.state.current} /> } />
-                    <Route exact path='/events' render={() => <Events calenders={this.state.calenders}/> } />
+                    <Route path='/orgportal' render={() => <OrgPortal current={this.props.current} /> } />
+                    <Route exact path='/events' render={() => <Events calendars={this.props.calendars}/> } />
                     <Route exact path='/about' component={About} />
-                    <Route exact path='/contact'render={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm}/>} />
+                    <Route exact path='/contact'render={() => <Contact postContact={this.props.postContact} resetFeedbackForm={this.props.resetFeedbackForm}/>} />
                     <Redirect to='/home'/>
                 </Switch>
                 <Footer />
@@ -86,5 +102,6 @@ class Main extends Component {
         );
     }
 }
+
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
