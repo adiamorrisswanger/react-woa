@@ -22,7 +22,7 @@ function RenderUnits({unit}) {
     )
 }
 function ArtistPortal(props) {   
-    const unitDirectory = props.units.map(unit => {
+    const unitDirectory = props.units.units.map(unit => {
         return (
             <div key={unit.id} className="col-md-4 mb-4 mx-auto d-flex align-items-strech">
                 <RenderUnits unit={unit} />

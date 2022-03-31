@@ -2,7 +2,7 @@ import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
 
-/* export const fetchUnits = () => dispatch => {
+export const fetchUnits = () => dispatch => {
     dispatch(unitsLoading());
     
     return fetch(baseUrl + 'units')
@@ -37,7 +37,7 @@ export const unitsFailed = errMess => ({
 export const addUnits = units => ({
     type: ActionTypes.ADD_UNITS,
     payload: units
-}) */
+})
 
 export const fetchWorkshops = () => dispatch => {
     dispatch(workshopsLoading());

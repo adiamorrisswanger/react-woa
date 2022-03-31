@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
-function RenderUnit({unititem, isLoading, errMess}) {
+function RenderUnit({unitItem, isLoading, errMess}) {
     if (isLoading) {
         return <Loading />
     }
@@ -15,12 +15,12 @@ function RenderUnit({unititem, isLoading, errMess}) {
             
             <React.Fragment>
                 <Card>
-                <CardImg width="100%" src={unititem.image} alt={unititem.name} />
+                <CardImg width="100%" src={baseUrl + unitItem.image} alt={unitItem.name} />
                     <CardBody className="p-4 px-3 bg-ltgrey">
                         <CardText>
-                            <h3 className="h2-date">{unititem.name}</h3>
-                            {unititem.description}</CardText>
-                        <Link to={`/artistportal/${unititem.id}`} className="card-link" ><Button className="btn-block btn-green">Check It Out</Button></Link>
+                            <h3 className="h2-date">{unitItem.name}</h3>
+                            {unitItem.description}</CardText>
+                        <Link to={`/artistportal/${unitItem.id}`} className="card-link" ><Button className="btn-block btn-green">Check It Out</Button></Link>
                     </CardBody>
                 </Card>
             </React.Fragment>
@@ -54,7 +54,7 @@ function RenderCalendar({calitem, isLoading, errMess}) {
 
 function Home(props) {
 
-    console.log(props.calendar)
+    console.log(props.calitem)
 
 return (
     <React.Fragment>
@@ -91,7 +91,7 @@ return (
                 <div className="row">
                     <div className="col-lg-4 d-flex align-items-stretch">
                         <RenderUnit 
-                            unititem={props.unit}
+                            unitItem={props.unit}
                             isLoading={props.unitsLoading}
                             errMess={props.unitsErrMess}
                         />

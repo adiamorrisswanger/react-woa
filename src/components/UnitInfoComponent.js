@@ -7,21 +7,15 @@ import { baseUrl } from '../shared/baseUrl';
 function RenderUnitInfo({unit}) {
     
         return (
-            <div className="container">
+            <div className="container" key={unit.id}>
                 <div className="row">
-                    <div className="col-md-3 mt-2">
+                <div className="col-md-3 mt-2">
                             <img src={baseUrl + unit.image} className="unit-img" width="100%" alt={unit.name} />
                             <Button className="btn btn-orange text-white mt-2 btn-block">Login to Download</Button>
                     </div>
                     <div className="col-md-9">
-                        <h4 className="unit-h4">{unit.title1}</h4>
-                        <p>{unit.description1}</p>
-                        <h4 className="unit-h4">{unit.title2}</h4>
-                        <p>{unit.description2}</p>
-                        <h4 className="unit-h4">{unit.title3}</h4>
-                        <p>{unit.description3}</p>
-                        <h4 className="unit-h4">{unit.title4}</h4>
-                        <p>{unit.description4}</p>
+                        <h4 className="unit-h4">{unit.name}</h4>
+                        <p>{unit.description}</p>
                     </div>
                 </div>
             </div>

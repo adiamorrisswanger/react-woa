@@ -1,4 +1,4 @@
-export const CURRENT = [
+export const WORKSHOPS = [
     {
         id: 0,
         name: 'E-Commerce Panel',
