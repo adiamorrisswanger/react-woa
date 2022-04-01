@@ -23,10 +23,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    postContact: (firstName, lastName, phoneNum, email, contactType, message) => {postContact(firstName, lastName, phoneNum, email, contactType, message)},
+    postContact: contact => {postContact(contact)},
     fetchUnits: () => (fetchUnits()),
     resetFeedbackForm: () => (actions.reset('contactForm')),
-    //fetchCalendars: () => (fetchCalendars()),
     fetchWorkshops: () => (fetchWorkshops()),
     loginUser: creds => (loginUser(creds)),
     logoutUser: () => (logoutUser()),
@@ -37,7 +36,6 @@ class Main extends Component {
 
     componentDidMount() {
         this.props.fetchUnits();
-        //this.props.fetchCalendars();
         this.props.fetchWorkshops();
     }
 
@@ -49,14 +47,10 @@ class Main extends Component {
                 unit={this.props.units.units.filter(unit => unit.featured)[0]}     
                 unitsLoading={this.props.units.isLoading}
                 unitsErrMess={this.props.units.errMess}           
-                calendar={this.props.calendars.calendars.filter(calendar => calendar.featured)[0]}
-                calendarLoading={this.props.calendars.isLoading}
-                calendarErrMess={this.props.calendars.errMess}
                 />
                 
             );
         };
-        //console.log(this.props.calendar);
 
         const UnitWithId = ({match}) => {
             return (

@@ -11,7 +11,7 @@ function RenderUnitInfo({unit}) {
                 <div className="row">
                 <div className="col-md-3 mt-2">
                             <img src={baseUrl + unit.image} className="unit-img" width="100%" alt={unit.name} />
-                            <Button className="btn btn-orange text-white mt-2 btn-block">Login to Download</Button>
+                            <Button className="btn btn-orange text-white mt-2 btn-block" >Login to Download</Button>
                     </div>
                     <div className="col-md-9">
                         <h4 className="unit-h4">{unit.name}</h4>

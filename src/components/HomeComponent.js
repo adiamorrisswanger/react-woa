@@ -12,7 +12,6 @@ function RenderUnit({unitItem, isLoading, errMess}) {
         return <h4>{errMess}</h4>;
     }
         return (
-            
             <React.Fragment>
                 <Card>
                 <CardImg width="100%" src={baseUrl + unitItem.image} alt={unitItem.name} />
@@ -29,32 +28,10 @@ function RenderUnit({unitItem, isLoading, errMess}) {
         
     }
 
-function RenderCalendar({calitem, isLoading, errMess}) {
-    if (isLoading) {
-        return <Loading />;
-    }
-    if (errMess) {
-        return <h4>{errMess}</h4>;
-    }
-    return (
-        <React.Fragment>
-        <Card className="bg-ltgrey">
-        <CardImg width="100%" src={"../../images/Opening-Celebration-02-Destiny-Roberts-1024x707.jpg"} />
-            <CardBody>
-                <CardTitle><h2 className="h2-date">{calitem.date}</h2></CardTitle>
-                <CardTitle><h5>{calitem.name}</h5></CardTitle>
-                <CardText>{calitem.description}</CardText>
-                <a href={calitem.link} target="_blank" rel="noreferrer"><Button className="btn-orange text-white">Learn More</Button></a>
-            </CardBody>
-        </Card>
-    </React.Fragment>
-);
-}
+
 
 
 function Home(props) {
-
-    console.log(props.calitem)
 
 return (
     <React.Fragment>
@@ -95,14 +72,6 @@ return (
                             isLoading={props.unitsLoading}
                             errMess={props.unitsErrMess}
                         />
-                    </div>
-                    <div className="col-lg-8 d-flex align-items-stretch">
-                        <hr></hr>
-                        <RenderCalendar 
-                            calitem={props.calendar}
-                            isLoading={props.calendarLoading}
-                            errMess={props.calendarErrMess}
-                         />
                     </div>
                 </div>
             </div>

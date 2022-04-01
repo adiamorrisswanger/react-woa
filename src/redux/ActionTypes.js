@@ -21,3 +21,5 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 
 
 export const ADD_CONTACT = 'ADD_CONTACT';
+/* export const CONTACT_SUCCESS = 'CONTACT_SUCCESS';
+export const CONTACT_FAILURE = 'CONTACT_FAILURE'; */

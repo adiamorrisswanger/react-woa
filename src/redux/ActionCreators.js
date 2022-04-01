@@ -76,7 +76,7 @@ export const addWorkshops = workshops => ({
     payload: workshops
 });
 
-/* export const fetchCalendars = () => dispatch => {
+export const fetchCalendars = () => dispatch => {
     dispatch(calendarsLoading());
 
     return fetch(baseUrl + 'events')
@@ -112,7 +112,7 @@ export const addCalendars = calendars => ({
     type: ActionTypes.ADD_CALENDARS,
     payload: calendars
 });
- */
+
 
 
 export const requestLogin = creds => {
@@ -191,9 +191,8 @@ export const logoutUser = () => dispatch => {
     dispatch(receiveLogout())
 }
 
-export const postContact = (firstName, lastName, phoneNum, email, contactType, message) => dispatch => {
-
-    const contact = {
+export const postContact = contact => dispatch => {
+   /*  const contact = {
         firstName: firstName,
         lastName: lastName,
         phoneNum: phoneNum,
@@ -201,7 +200,8 @@ export const postContact = (firstName, lastName, phoneNum, email, contactType, m
         contactType: contactType,
         message: message
     }
-    console.log('Contact ', contact);
+    console.log('Contact ', contact); */
+
 
     return fetch(baseUrl + 'contact', {
         method: 'POST',
@@ -224,9 +224,13 @@ export const postContact = (firstName, lastName, phoneNum, email, contactType, m
     )
     .then(response => response.json())
     .then(response => dispatch(addContact(response)))
+    .then(response => {
+        console.log('Contact', response);
+        alert('Thank you for your message!\n' + JSON.stringify(response));
+    })
     .catch(error => {
-        console.log('contact', error.message);
-        alert('Could not submit contact\nError: ' + error.message);
+        console.log('Contact', error.message);
+        alert('Could not submit message\nError: ' + error.message);
     });
 };
 
