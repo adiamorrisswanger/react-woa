@@ -19,6 +19,9 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 
+export const ADD_USER = 'ADD_USER';
+//export const USER_SUCCESS = 'USER_SUCCESS';
+//export const USER_FAILURE = 'USER_FAILURE';
 
 export const ADD_CONTACT = 'ADD_CONTACT';
 /* export const CONTACT_SUCCESS = 'CONTACT_SUCCESS';

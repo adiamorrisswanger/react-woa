@@ -1,11 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 import { createForms } from 'react-redux-form';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 import { Units } from './units';
 import { Calendars } from './calendars';
 import { Workshops } from './workshops';
-import { ContactForm } from './forms';
 import { Auth } from './auth';
+import { Users } from './users';
+
+import { InitialContact, InitialSignUp } from './forms';
 
 export const ConfigureStore = () => {
     const store = createStore(
@@ -14,12 +17,14 @@ export const ConfigureStore = () => {
             calendars: Calendars,
             workshops: Workshops,
             auth: Auth,
+            users: Users,
             ...createForms({
-                contactForm: ContactForm
+                contactForm: InitialContact,
+                signUpForm: InitialSignUp
             })
         }),
-        applyMiddleware(thunk)
+        applyMiddleware(thunk, logger)
     );
 
     return store;
-}
+};

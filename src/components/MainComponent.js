@@ -9,7 +9,7 @@ import ArtistPortal from './ArtistPortalComponent';
 import OrgPortal from './OrgPortalComponent';
 import UnitInfo from './UnitInfoComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { fetchWorkshops, fetchUnits, loginUser, logoutUser, postContact } from '../redux/ActionCreators';
+import { fetchWorkshops, fetchUnits, loginUser, logoutUser, postContact, postUser } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 
@@ -18,7 +18,8 @@ const mapStateToProps = state => {
         units: state.units,
         calendars: state.calendars,
         workshops: state.workshops,
-        auth: state.auth
+        auth: state.auth,
+        users: state.users
     };
 };
 
@@ -29,6 +30,7 @@ const mapDispatchToProps = {
     fetchWorkshops: () => (fetchWorkshops()),
     loginUser: creds => (loginUser(creds)),
     logoutUser: () => (logoutUser()),
+    postUser: user => {postUser(user)}
 };
 
 class Main extends Component {
@@ -90,7 +92,9 @@ class Main extends Component {
                 <Header 
                     auth={this.props.auth}
                     loginUser={this.props.loginUser}
-                    logoutUser={this.props.logoutUser}/>
+                    logoutUser={this.props.logoutUser}
+                    postUser={this.props.postUser}
+                />
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/artistportal' render={() => <ArtistPortal units={this.props.units} /> } /> 
@@ -99,14 +103,14 @@ class Main extends Component {
                     {/* <Route path='/orgportal/:workshopId' component={WorkshopWithId} /> */}
                     <Route exact path='/events' render={() => <Events calendars={this.props.calendars}/> } />
                     <Route exact path='/about' component={About} />
-                    <Route exact path='/contact'render={() => <Contact postContact={this.props.postContact} resetFeedbackForm={this.props.resetFeedbackForm}/>} />
+                    <Route exact path='/contact'render={() => <Contact postContact={this.props.postContact} resetFeedbackForm={this.props.resetFeedbackForm} />} />
                     <Redirect to='/home'/>
                 </Switch>
                 <Footer />
             </div>
         );
     }
-}
+} 
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

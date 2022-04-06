@@ -191,23 +191,12 @@ export const logoutUser = () => dispatch => {
     dispatch(receiveLogout())
 }
 
-export const postContact = contact => dispatch => {
-   /*  const contact = {
-        firstName: firstName,
-        lastName: lastName,
-        phoneNum: phoneNum,
-        email: email,
-        contactType: contactType,
-        message: message
-    }
-    console.log('Contact ', contact); */
-
-
+export const postContact = contact => () => {
     return fetch(baseUrl + 'contact', {
         method: 'POST',
         body: JSON.stringify(contact),
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         credentials: 'same-origin'
     })
@@ -220,21 +209,59 @@ export const postContact = contact => dispatch => {
                 throw error;
             }
         },
-        error => { throw error; }
+        error => { throw error; }             
     )
     .then(response => response.json())
-    .then(response => dispatch(addContact(response)))
     .then(response => {
-        console.log('Contact', response);
+        console.log('Contact:', response);
         alert('Thank you for your message!\n' + JSON.stringify(response));
     })
     .catch(error => {
-        console.log('Contact', error.message);
-        alert('Could not submit message\nError: ' + error.message);
+        console.log('Contact:', error.message);
+        alert('Your message could not be posted\nError: ' + error.message);
     });
 };
 
-export const addContact = contact => ({
+/* export const newContact = contact => ({
     type: ActionTypes.ADD_CONTACT,
     payload: contact
-})
+}) */
+
+export const postUser = (newUser) => () => {
+    
+    console.log('new user ', newUser);
+
+    return fetch(baseUrl + 'users/signup', {
+        method: 'POST',
+        body: JSON.stringify(newUser),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => { throw error; }
+    )
+    .then(response => response.json())
+    //.then(response => dispatch(postUser(response)))
+    .then(response => {
+        console.log('new user', newUser);
+        alert('Thanks for signing up!\n' + JSON.stringify(response));
+    })
+    .catch(error => {
+        console.log('newUser', error.message);
+        alert('Could not create new account\nError ' + error.message);
+    });
+};
+
+/* export const addUser = user => ({
+    type: ActionTypes.ADD_USER,
+    payload: user
+}) */

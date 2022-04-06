@@ -13,32 +13,14 @@ class Contact extends Component {
 
     constructor(props) {
         super(props);
-
-        /* this.state = {
-            firstName: '',
-            lastName: '',
-            email: '',
-            phoneNum: '',
-            contactType: 'By Phone',
-            message: '',
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
-        }; */
-
         
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    
     handleSubmit(values) {
-        console.log('Current state is: ' + JSON.stringify(values));
+        console.log("Current state is: " + JSON.stringify(values));
         this.props.postContact(values);
         this.props.resetFeedbackForm();
-        //event.preventDefault();
     }
 
     render() {
@@ -59,8 +41,8 @@ class Contact extends Component {
                     <Form model="contactForm" onSubmit={values => this.handleSubmit(values)}>
 
                     <Row className="form-group">
-                                <Col md={6}>
-                                    <Label htmlFor="firstName">First Name</Label>
+                        <Col md={6}>
+                             <Label htmlFor="firstName">First Name</Label>
                                     <Control.text model=".firstName" id="firstName" name="firstName"
                                         placeholder="First Name"
                                         className="form-control"

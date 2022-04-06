@@ -1,8 +1,16 @@
 import React, { Component }  from 'react';
-import { Button, Modal, ModalHeader, ModalBody, Form, FormFeedback, FormGroup, Label, Input, Col } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, Label, Row, Col } from 'reactstrap';
+import { Control, Form, Errors, actions } from 'react-redux-form';
+
+const required = val => val && val.length;
+const maxLength = len => val => !val || (val.length <= len);
+const minLength = len => val => val && (val.length >= len);
+//const isNumber = val => !isNaN(+val);
+const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class CTA extends Component {
 
+    
     constructor(props){
         super(props);
 
@@ -23,80 +31,14 @@ class CTA extends Component {
             }
         };
         this.toggleModal = this.toggleModal.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    validate(firstName, lastName, username, emailAddress, referred) {
-
-        const errors = {
-            firstName: '',
-            lastName: '',
-            username: '',
-            emailAddress: '',
-            referred: '',
-        };
-
-        if (this.state.touched.firstName) {
-            if (firstName.length < 2) {
-                errors.firstName = 'First name must be at least 2 characters.';
-            } else if (firstName.length > 15) {
-                errors.firstName = 'First name must be 15 or less characters.';
-            }
-        }
-
-        if (this.state.touched.lastName) {
-            if (lastName.length < 2) {
-                errors.lastName = 'Last name must be at least 2 characters.';
-            } else if (lastName.length > 15) {
-                errors.lastName = 'Last name must be 15 or less characters.';
-            }
-        }
-
-        if (this.state.touched.username) {
-            if (username.length < 2) {
-                errors.username = 'Username must be at least 2 characters.';
-            } else if (username.length > 15) {
-                errors.username = 'Username must be 15 or less characters.';
-            }
-        }
-
-        if (this.state.touched.emailAddress && !emailAddress.includes('@')) {
-            errors.emailAddress = 'Email should contain a @';
-        }
-
-        
-        if (this.state.touched.referred) {
-            if (referred.length < 1) {
-                errors.referred = 'Please put a reference. Put N/A if not avaialble.';
-            }
-        }
-
-        return errors;
+    handleSubmit(values) {
+        console.log('Current state is: ' + JSON.stringify(values));
+        alert('Current state is: ' + JSON.stringify(values));
+        this.toggleModal();
     }
-
-    handleBlur = (field) => () => {
-        this.setState({
-            touched: {...this.state.touched, [field]: true}
-        });
-    }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const name = target.name;
-        const value = target.value;
-
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleSubmit(event) {
-        console.log('Current state is: ' + JSON.stringify(this.state));
-        alert('Current state is: ' + JSON.stringify(this.state));
-        event.preventDefault();
-    }
-
 
     toggleModal() {
         this.setState({
@@ -105,8 +47,6 @@ class CTA extends Component {
     }
 
         render() {
-
-            const errors = this.validate(this.state.firstName, this.state.lastName, this.state.emailAddress, this.state.referred); 
 
             return (
                 <React.Fragment>
@@ -121,98 +61,163 @@ class CTA extends Component {
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                         <ModalHeader toggle={this.toggleModal}>SIGN UP TODAY!</ModalHeader>
                         <ModalBody>
-                            <Form onSubmit={this.handleSubmit}>
-                                <FormGroup row>
+                            <Form model="signUpForm" onSubmit={values => this.handleSubmit(values)}>
+                                <Row className="form-group">
                                     <Col md={6}>
                                         <Label htmlFor="firstName">First Name</Label>
-                                        <Input 
-                                            type="text" 
+                                        <Control.text
+                                            model=".firstName"
                                             id="firstName" 
                                             name="firstName" 
                                             placeholder="First"
-                                            value={this.state.firstName}
-                                            invalid={errors.firstName}
-                                            onBlur={this.handleBlur("firstName")}
-                                            onChange={this.handleInputChange} 
+                                            className="form-control"
+                                            validators={{
+                                                required,
+                                                minLength: minLength(2),
+                                                maxLength: maxLength(15)
+                                            }}
                                         />
-                                    <FormFeedback>{errors.firstName}</FormFeedback>
+                                        <Errors
+                                            className="text-danger"
+                                            model=".firstName"
+                                            show="touched"
+                                            component="div"
+                                            messages={{
+                                                required: 'Required',
+                                                minLength: 'Must be at least two characters',
+                                                maxLength: 'Must be 15 characters or less'
+                                            }}
+                                        />
                                     </Col>
                                     <Col md={6}>
                                         <Label htmlFor="lastName">Last Name</Label>
-                                        <Input 
-                                            type="text" 
+                                        <Control.text 
+                                            model=".lastName"
                                             id="lastName" 
                                             name="lastName" 
                                             placeholder="Last"
-                                            value={this.state.lastName}
-                                            invalid={errors.lastName}
-                                            onBlur={this.handleBlur("lastName")}
-                                            onChange={this.handleInputChange} 
+                                            className="form-control"
+                                            validators={{
+                                                required,
+                                                minLength: minLength(2),
+                                                maxLength: maxLength(15)
+                                            }}
                                         />
-                                    <FormFeedback>{errors.lastName}</FormFeedback>
+                                        <Errors
+                                            className="text-danger"
+                                            model=".lastName"
+                                            show="touched"
+                                            component="div"
+                                            messages={{
+                                                required: 'Required',
+                                                minLength: 'Must be at least two characters',
+                                                maxLength: 'Must be 15 characters or less'
+                                            }}
+                                        />
                                     </Col>
                                     <Col md={6}>
                                         <Label htmlFor="username">Username</Label>
-                                        <Input 
-                                            type="text" 
+                                        <Control.text 
+                                            model=".username"
                                             id="username" 
                                             name="username" 
                                             placeholder="Username"
-                                            value={this.state.username}
-                                            invalid={errors.lastName}
-                                            onBlur={this.handleBlur("username")}
-                                            onChange={this.handleInputChange} 
+                                            className="form-control"
+                                            validators={{
+                                                required,
+                                                minLength: minLength(2),
+                                                maxLength: maxLength(15)
+                                            }}
                                         />
-                                        <FormFeedback>{errors.username}</FormFeedback>
+                                        <Errors
+                                            className="text-danger"
+                                            model=".username"
+                                            show="touched"
+                                            component="div"
+                                            messages={{
+                                                required: 'Required',
+                                                minLength: 'Must be at least two characters',
+                                                maxLength: 'Must be 15 characters or less'
+                                            }}
+                                        />
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
+                                </Row>
+                                <Row className="form-group">
                                     <Col>
                                         <Label htmlFor="emailAddress">Email Address</Label>
-                                        <Input 
-                                            type="text" 
+                                        <Control.text 
+                                            model=".emailAddress"
                                             id="emailAddress" 
                                             name="emailAddress" 
                                             placeholder="Email Address"
-                                            value={this.state.emailAddress}
-                                            invalid={errors.emailAddress}
-                                            onBlur={this.handleBlur("emailAddress")}
-                                            onChange={this.handleInputChange} 
+                                            className="form-control"
+                                            validators={{
+                                                required,
+                                                validEmail
+                                            }}
                                         />
-                                    <FormFeedback>{errors.emailAddress}</FormFeedback>
+                                        <Errors
+                                            className="text-danger"
+                                            model=".emailAddress"
+                                            show="touched"
+                                            component="div"
+                                            messages={{
+                                                required: 'Required',
+                                                validemail: 'Invalid email address'
+                                            }}
+                                        />
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
+                                </Row>
+                                <Row className="form-group">
                                     <Col>
                                         <Label htmlFor="organization">Organization</Label>
-                                        <Input 
-                                            type="text" 
+                                        <Control.text
+                                            model=".organization"
                                             id="organization" 
                                             name="organization" 
                                             placeholder="(Optional)" 
-                                            value={this.state.organization} 
-                                            onChange={this.handleInputChange} 
+                                            className="form-control"
+                                            validators={{
+                                                maxLength: maxLength(30)
+                                            }}
+                                        />
+                                        <Errors
+                                            className="text-danger"
+                                            model=".organization"
+                                            show="touched"
+                                            component="div"
+                                            messages={{
+                                                maxLength: 'Must be less than 30 characters'
+                                            }}
                                         />
                                     </Col>
-                                </FormGroup>
-                                <FormGroup row>
+                                </Row>
+                                <Row className="form-group">
                                     <Col>
                                         <Label htmlFor="referred">Where did you hear about us?</Label>
-                                        <Input 
-                                            type="text" 
+                                        <Control.text
+                                            model="referred" 
                                             id="referred" 
                                             name="referred" 
                                             placeholder="Website, event or reference"
-                                            value={this.state.referred}
-                                            invalid={errors.referred}
-                                            onBlur={this.handleBlur("referred")}
-                                            onChange={this.handleInputChange} 
+                                            className="form-control"
+                                            validators={{
+                                                maxLength: maxLength(30)
+                                            }}
                                         />
-                                    <FormFeedback>{errors.referred}</FormFeedback>
+                                        <Errors
+                                            className="text-danger"
+                                            model=".referred"
+                                            show="touched"
+                                            component="div"
+                                            messages={{
+                                                maxLength: 'Must be less than 30 characters'
+                                            }}
+                                        />
                                     </Col>
-                                </FormGroup>
+                                </Row>
                             </Form>
-                            <Button className="btn-orange float-right">Join Now</Button>
+                            <Button type="submit" className="btn-orange float-right" >Join Now</Button>
                         </ModalBody>
                     </Modal>
                 </React.Fragment>
