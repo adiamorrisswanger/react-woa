@@ -4,7 +4,8 @@ import { Card, CardTitle, CardBody, Button } from 'reactstrap';
 function Events(props) {
     const eventDirectory = props.calendars.calendars.map(calendar => {
         return(
-            <div key={calendar.id} className="m-3">
+            //Need to drop database and add "id" to Schema
+            <div key={calendar._id} className="m-3">
                 <RenderEvents calendar={calendar} />
             </div>
         );

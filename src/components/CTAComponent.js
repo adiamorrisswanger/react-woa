@@ -7,6 +7,7 @@ const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
 //const isNumber = val => !isNaN(+val);
 const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+//const validPass = val => /^[A-Za-z0-9_-]+[^A-Za-z0-9_]+[A-Za-z0-9_]{8,}+[^A-Za-z0-9]{1,}$/i.test(val);
 
 class CTA extends Component {
 
@@ -142,6 +143,33 @@ class CTA extends Component {
                                         />
                                     </Col>
                                 </Row>
+                                {/* <Row className="form-group">
+                                    <Col md={6}>
+                                        <Label htmlFor="password">Please choose a password:</Label>
+                                        <Control.text
+                                            model=".password"
+                                            id="password"
+                                            name="password"
+                                            placeholder="Required"
+                                            className="form-control"
+                                            validators={{
+                                                required,
+                                                validPass
+                                            }}
+                                        />
+                                        <Errors
+                                            className="text-danger"
+                                            model=".password"
+                                            show="touched"
+                                            component="div"
+                                            messages={{
+                                                required: 'Required',
+                                                validPass: 'Must be at least 8 characters long, include at least one number, one uppercase letter, and one special character'
+                                            }}
+                                        
+                                        />
+                                    </Col>
+                                </Row> */}
                                 <Row className="form-group">
                                     <Col>
                                         <Label htmlFor="emailAddress">Email Address</Label>
@@ -199,7 +227,7 @@ class CTA extends Component {
                                             model="referred" 
                                             id="referred" 
                                             name="referred" 
-                                            placeholder="Website, event or reference"
+                                            placeholder="Website, event or reference (Optional)"
                                             className="form-control"
                                             validators={{
                                                 maxLength: maxLength(30)

@@ -28,11 +28,33 @@ function RenderUnit({unitItem, isLoading, errMess}) {
         
     }
 
-
+/* function RenderEvent({eventItem, isLoading, errMess}) {
+    if (isLoading) {
+        return <Loading />
+    }
+    if (errMess) {
+        return <h4>{errMess}</h4>;
+    }
+        return (
+            
+            <React.Fragment>
+                <Card>
+                <CardImg width="100%" src={baseUrl + eventItem.image} alt={eventItem.name} /> 
+                    <CardBody className="p-4 px-3 bg-ltgrey">
+                        <CardText>
+                            <h3 className="h2-date">{eventItem.name}</h3>
+                            {eventItem.description}</CardText>
+                            {/* Need to add id to Scheme 
+                        <Link to={`/artistportal/${eventItem.id}`} className="card-link" ><Button className="btn-block btn-green">Check It Out</Button></Link>
+                    </CardBody>
+                </Card>
+            </React.Fragment>
+    
+        );
+} */
 
 
 function Home(props) {
-
 return (
     <React.Fragment>
     <div className="container portal-div">
@@ -73,6 +95,13 @@ return (
                             errMess={props.unitsErrMess}
                         />
                     </div>
+                   {/*  <div className="col-lg-4 d-flex align-items-stretch">
+                        <RenderEvent
+                            eventItem={props.calendar}
+                            isLoading={props.calendarsLoading}
+                            errMess={props.calendarsErrMess}
+                        />
+                    </div> */}
                 </div>
             </div>
         </React.Fragment>

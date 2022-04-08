@@ -8,6 +8,7 @@ import Footer from './FooterComponent';
 import ArtistPortal from './ArtistPortalComponent';
 import OrgPortal from './OrgPortalComponent';
 import UnitInfo from './UnitInfoComponent';
+import WorkshopInfo from './WorkshopInfoComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { fetchWorkshops, fetchUnits, loginUser, logoutUser, postContact, postUser } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
@@ -24,8 +25,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    postContact: contact => {postContact(contact)},
+    postContact: contact => (postContact(contact)),
     fetchUnits: () => (fetchUnits()),
+    //fetchCalendars: () => (fetchCalendars()),
     resetFeedbackForm: () => (actions.reset('contactForm')),
     fetchWorkshops: () => (fetchWorkshops()),
     loginUser: creds => (loginUser(creds)),
@@ -39,6 +41,7 @@ class Main extends Component {
     componentDidMount() {
         this.props.fetchUnits();
         this.props.fetchWorkshops();
+        //this.props.fetchCalendars();
     }
 
     render() {
@@ -48,11 +51,16 @@ class Main extends Component {
                 <Home 
                 unit={this.props.units.units.filter(unit => unit.featured)[0]}     
                 unitsLoading={this.props.units.isLoading}
-                unitsErrMess={this.props.units.errMess}           
+                unitsErrMess={this.props.units.errMess}    
+                /* calendar={this.props.calendars.calendars.filter(calendar => calendar.featured)[0]}
+                calendarsLoading={this.props.calendars.isLoading}
+                calendarsErrMess={this.props.calendars.errMess} */       
                 />
                 
             );
+            
         };
+        
 
         const UnitWithId = ({match}) => {
             return (
@@ -64,7 +72,7 @@ class Main extends Component {
             );
           };
 
-          /* const WorkshopWithId = ({match}) => {
+          const WorkshopWithId = ({match}) => {
             return (
               <WorkshopInfo 
                 workshop={this.state.workshops.workshops.filter(workshop => workshop.id === +match.params.workshopId)[0]}
@@ -72,9 +80,9 @@ class Main extends Component {
                 errMess={this.state.workshops.errMess}
                 />
             );
-          }; */
+          }; 
 
-          /* const PrivateRoute = ({ component: Component, ...rest }) => (
+          const PrivateRoute = ({ component: Component, ...rest }) => (
               <Route {...rest} render={props => (
                   this.props.auth.isAuthenticated 
                     ? <Component {...props} /> 
@@ -85,7 +93,7 @@ class Main extends Component {
                     />
                 )}
             />
-          ); */
+          ); 
 
         return(
             <div>
@@ -100,7 +108,7 @@ class Main extends Component {
                     <Route exact path='/artistportal' render={() => <ArtistPortal units={this.props.units} /> } /> 
                     <Route path='/artistportal/:unitId' component={UnitWithId} />
                     <Route path='/orgportal' render={() => <OrgPortal workshops={this.props.workshops} /> } />
-                    {/* <Route path='/orgportal/:workshopId' component={WorkshopWithId} /> */}
+                    <Route path='/orgportal/:workshopId' component={WorkshopWithId} /> 
                     <Route exact path='/events' render={() => <Events calendars={this.props.calendars}/> } />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact'render={() => <Contact postContact={this.props.postContact} resetFeedbackForm={this.props.resetFeedbackForm} />} />

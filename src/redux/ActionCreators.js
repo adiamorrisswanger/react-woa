@@ -42,7 +42,7 @@ export const addUnits = units => ({
 export const fetchWorkshops = () => dispatch => {
     dispatch(workshopsLoading());
 
-    return fetch(baseUrl + 'events')
+    return fetch(baseUrl + 'workshops')
     .then(response => {
         if (response.ok) {
             return response;
