@@ -192,7 +192,7 @@ export const logoutUser = () => dispatch => {
 }
 
 export const postContact = contact => () => {
-    return fetch(baseUrl + 'contact', {
+    return fetch(baseUrl + 'contacts', {
         method: 'POST',
         body: JSON.stringify(contact),
         headers: {

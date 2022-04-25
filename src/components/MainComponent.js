@@ -68,6 +68,8 @@ class Main extends Component {
                 unit={this.props.units.units.filter(unit => unit.id === +match.params.unitId)[0]}
                 isLoading={this.props.units.isLoading}
                 errMess={this.props.units.errMess}
+                auth={this.props.auth}
+                isAuthenticated={this.props.auth.isAuthenticated}
                 />
             );
           };
@@ -82,7 +84,7 @@ class Main extends Component {
             );
           }; 
 
-          const PrivateRoute = ({ component: Component, ...rest }) => (
+          /* const PrivateRoute = ({ component: Component, ...rest }) => (
               <Route {...rest} render={props => (
                   this.props.auth.isAuthenticated 
                     ? <Component {...props} /> 
@@ -93,7 +95,7 @@ class Main extends Component {
                     />
                 )}
             />
-          ); 
+          );  */
 
         return(
             <div>

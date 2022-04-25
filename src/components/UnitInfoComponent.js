@@ -4,8 +4,23 @@ import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
-function RenderUnitInfo({unit}) {
-    
+function RenderUnitInfo({unit, auth, isAuthenticated}) {
+    if(isAuthenticated) {
+        return (
+            <div className="container" key={unit.id}>
+                <div className="row">
+                <div className="col-md-3 mt-2">
+                            <img src={baseUrl + unit.image} className="unit-img" width="100%" alt={unit.name} />
+                            <Button className="btn btn-orange text-white mt-2 btn-block" >Download</Button>
+                    </div>
+                    <div className="col-md-9">
+                        <h4 className="unit-h4">{unit.name}</h4>
+                        <p>{unit.description}</p>
+                    </div>
+                </div>
+            </div>
+        )
+    } else {
         return (
             <div className="container" key={unit.id}>
                 <div className="row">
@@ -20,6 +35,8 @@ function RenderUnitInfo({unit}) {
                 </div>
             </div>
         )
+    }
+        
     }
 
 
@@ -68,7 +85,9 @@ function UnitInfo(props) {
                         <RenderUnitInfo 
                             unit={props.unit}
                             isLoading={props.unitsLoading}
-                            errMess={props.unitsErrMess} 
+                            errMess={props.unitsErrMess}
+                            auth={props.auth}
+                            isAuthenticated={props.auth.isAuthenticated} 
                         />
                     </div>
                 </div>
