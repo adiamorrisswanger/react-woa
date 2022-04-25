@@ -265,3 +265,54 @@ export const postUser = (newUser) => () => {
     type: ActionTypes.ADD_USER,
     payload: user
 }) */
+
+export const downloadBook = book => dispatch => {
+    console.log("Downloading workbook");
+
+    dispatch(requestDownload(book))
+
+    return fetch(baseUrl + 'downloads', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/pdf'
+        }
+    })
+    .then((response) => response.blob())
+    .then((blob) => {
+        const url = window.URL.createObjectURL(
+            new Blob([blob])
+        );
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute(
+            'download',
+            `WorkofArtWorkbook2020.pdf`,
+        );
+
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+        URL.revokeObjectURL(link.href);
+    })
+}
+
+export const requestDownload = book => {
+    return {
+        type: ActionTypes.DOWNLOAD_REQUEST,
+        book
+    }
+}
+
+export const receiveDownload = response => {
+    return {
+        type: ActionTypes.DOWNLOAD_SUCCESS,
+        response
+    }
+}
+
+export const downloadError = message => {
+    return {
+        type: ActionTypes.DOWNLOAD_FAILURE,
+        message
+    }
+}

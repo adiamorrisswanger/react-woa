@@ -10,7 +10,7 @@ import OrgPortal from './OrgPortalComponent';
 import UnitInfo from './UnitInfoComponent';
 import WorkshopInfo from './WorkshopInfoComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { fetchWorkshops, fetchUnits, loginUser, logoutUser, postContact, postUser } from '../redux/ActionCreators';
+import { fetchWorkshops, fetchUnits, loginUser, logoutUser, postContact, postUser, downloadBook } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 
@@ -32,7 +32,8 @@ const mapDispatchToProps = {
     fetchWorkshops: () => (fetchWorkshops()),
     loginUser: creds => (loginUser(creds)),
     logoutUser: () => (logoutUser()),
-    postUser: user => {postUser(user)}
+    postUser: user => {postUser(user)},
+    downloadBook: () => (downloadBook())
 };
 
 class Main extends Component {
@@ -41,6 +42,7 @@ class Main extends Component {
     componentDidMount() {
         this.props.fetchUnits();
         this.props.fetchWorkshops();
+        this.props.downloadBook();
         //this.props.fetchCalendars();
     }
 

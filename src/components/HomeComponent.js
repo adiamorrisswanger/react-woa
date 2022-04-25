@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardText, CardBody, CardTitle, CardImg } from 'reactstrap';
+import { Button, Card, CardText, CardBody, CardImg } from 'reactstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
@@ -17,7 +17,7 @@ function RenderUnit({unitItem, isLoading, errMess}) {
                 <CardImg width="100%" src={baseUrl + unitItem.image} alt={unitItem.name} />
                     <CardBody className="p-4 px-3 bg-ltgrey">
                         <CardText>
-                            <h3 className="h2-date">{unitItem.name}</h3>
+                            <p className="h2-date">{unitItem.name}</p>
                             {unitItem.description}</CardText>
                         <Link to={`/artistportal/${unitItem.id}`} className="card-link" ><Button className="btn-block btn-green">Check It Out</Button></Link>
                     </CardBody>
