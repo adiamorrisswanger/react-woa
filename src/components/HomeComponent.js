@@ -78,33 +78,35 @@ return (
 
     <div className="container home-div">
         <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-8 mx-auto">
                 <h2 className="text-center">Featured Unit</h2>
                 <hr />
             </div>
-            <div className="col-lg-8">
-                        <h2 className="text-center">UPCOMING EVENT</h2>
-                        <hr />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-4 d-flex align-items-stretch">
-                        <RenderUnit 
-                            unitItem={props.unit}
-                            isLoading={props.unitsLoading}
-                            errMess={props.unitsErrMess}
-                        />
-                    </div>
-                   {/*  <div className="col-lg-4 d-flex align-items-stretch">
-                        <RenderEvent
-                            eventItem={props.calendar}
-                            isLoading={props.calendarsLoading}
-                            errMess={props.calendarsErrMess}
-                        />
-                    </div> */}
-                </div>
+            {/* <div className="col-lg-4">
+                <h2 className="text-center">UPCOMING EVENT</h2>
+                <hr />
+            </div> */}
+        <div className="row">
+            <div className="col-lg-8 mx-auto d-flex align-items-stretch">
+                <RenderUnit 
+                    unitItem={props.unit}
+                    isLoading={props.unitsLoading}
+                    errMess={props.unitsErrMess}
+                />
             </div>
-        </React.Fragment>
+        </div>
+        {/* <div className="row">
+            <div className="col-lg-4 d-flex align-items-stretch">
+                 <RenderEvent
+                    eventItem={props.calendar}
+                    isLoading={props.calendarsLoading}
+                    errMess={props.calendarsErrMess}
+                />
+            </div>  
+        </div> */}
+        </div>
+    </div>
+    </React.Fragment>
     );
 }
 

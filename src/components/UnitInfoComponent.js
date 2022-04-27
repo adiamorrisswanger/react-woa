@@ -4,20 +4,16 @@ import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
-function RenderUnitInfo({unit, isAuthenticated}) {
+function RenderUnitInfo({unit, isAuthenticated, downloadBook}) {
     
-    //Right now, workbook is downloading automatically when page is rendered. It's the endpoint router in the server.
-    const bookDownload = () => {
-        console.log("Downloading workbook");
-        this.props.downloadBook();
-    } 
+    //Right now, workbook is downloading automatically when page is rendered.
     if(isAuthenticated) {
         return (
             <div className="container" key={unit.id}>
                 <div className="row">
                 <div className="col-md-3 mt-2">
                             <img src={baseUrl + unit.image} className="unit-img" width="100%" alt={unit.name} />
-                            <Button className="btn btn-orange text-white mt-2 btn-block">Download the Workbook</Button>
+                            <Button className="btn text-white mt-2 btn-block" onClick={downloadBook}>Download the Workbook</Button>
                     </div>
                     <div className="col-md-9">
                         <h4 className="unit-h4">{unit.name}</h4>
@@ -32,7 +28,7 @@ function RenderUnitInfo({unit, isAuthenticated}) {
                 <div className="row">
                 <div className="col-md-3 mt-2">
                             <img src={baseUrl + unit.image} className="unit-img" width="100%" alt={unit.name} />
-                            <Button className="btn btn-orange text-white mt-2 btn-block" >Login to Download</Button>
+                            <Button className="btn text-white mt-2 btn-block disabled">Login to Download</Button>
                     </div>
                     <div className="col-md-9">
                         <h4 className="unit-h4">{unit.name}</h4>

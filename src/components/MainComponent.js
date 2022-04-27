@@ -72,6 +72,7 @@ class Main extends Component {
                 errMess={this.props.units.errMess}
                 auth={this.props.auth}
                 isAuthenticated={this.props.auth.isAuthenticated}
+                download={this.props.downloadBook}
                 />
             );
           };
