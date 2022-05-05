@@ -76,7 +76,7 @@ See the [open issues](https://github.com/adiamorrisswanger/react-woa/issues) for
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
+* [] Thank you, Rachel, for the beautiful design. (http://nurmidev.com)
 * []()
 * []()
 
