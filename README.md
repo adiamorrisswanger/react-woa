@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/adiamorrisswanger/react-woa.git">
-    <img src="images/WoALogo-2020-SM.png" alt="Logo" width="80" height="80">
+    <img src="./public/images/WoALogo-2020-SM.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Work of Art: Interactive</h3>
@@ -46,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]]()
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -105,4 +105,5 @@ Project Link: [https://github.com/adiamorrisswanger/react-woa](https://github.co
 [license-url]: https://github.com/adiamorrisswanger/react-woa/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/adia-morris-swanger
-[product-screenshot]: images/screenshot.png
+<!-- Upload screenshot -->
+[product-screenshot]: ./public/images/woa-screencapture-5-4-22.png
