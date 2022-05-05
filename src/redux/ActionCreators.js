@@ -268,15 +268,9 @@ export const postUser = (newUser) => () => {
 
 export const downloadBook = book => dispatch => {
     console.log("Downloading workbook");
+    dispatch(requestDownload(book));
 
-    dispatch(requestDownload(book))
-
-    return fetch(baseUrl + 'downloads', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/pdf'
-        }
-    })
+    return fetch(baseUrl + 'downloads')
     .then((response) => response.blob())
     .then((blob) => {
         const url = window.URL.createObjectURL(
@@ -316,3 +310,13 @@ export const downloadError = message => {
         message
     }
 }
+
+/* res.setHeader('Content-Disposition', 'attachment;');
+    res.setHeader('Content-Type', 'application/pdf')
+    res.download('./public/files/WorkofArt2020Web.pdf', 'WorkOfArt2020.pdf', function (err) {
+        if (err) {
+            console.log('Your file could not be downloaded' + err);
+        } else {
+            console.log('File downloaded');
+        }
+    }) */
