@@ -28,5 +28,5 @@ export const ADD_USER = 'ADD_USER';
 //export const USER_FAILURE = 'USER_FAILURE';
 
 export const ADD_CONTACT = 'ADD_CONTACT';
-/* export const CONTACT_SUCCESS = 'CONTACT_SUCCESS';
-export const CONTACT_FAILURE = 'CONTACT_FAILURE'; */
+export const CONTACT_SUCCESS = 'CONTACT_SUCCESS';
+export const CONTACT_FAILURE = 'CONTACT_FAILURE';

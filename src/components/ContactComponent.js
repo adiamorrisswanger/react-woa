@@ -91,7 +91,7 @@ class Contact extends Component {
                                 <Col md={6}>
                                     <Label htmlFor="phoneNum">Phone</Label>
                                     <Control.text model=".phoneNum" type="tel" id="phoneNum" name="phoneNum"
-                                        placeholder="Phone number"
+                                        placeholder="5558675309"
                                         className="form-control"
                                         validators={{
                                             required,

@@ -192,7 +192,7 @@ export const logoutUser = () => dispatch => {
 }
 
 export const postContact = contact => () => {
-    return fetch(baseUrl + 'contacts', {
+    return fetch(baseUrl + 'contact', {
         method: 'POST',
         body: JSON.stringify(contact),
         headers: {
@@ -222,10 +222,10 @@ export const postContact = contact => () => {
     });
 };
 
-/* export const newContact = contact => ({
+export const newContact = contact => ({
     type: ActionTypes.ADD_CONTACT,
     payload: contact
-}) */
+})
 
 export const postUser = (newUser) => () => {
     
@@ -269,7 +269,7 @@ export const postUser = (newUser) => () => {
 export const downloadBook = book => dispatch => {
     console.log("Downloading workbook");
     dispatch(requestDownload(book));
-//download works, but PDF is corrupted
+
     return fetch(baseUrl + 'downloads')
     .then((response) => response.blob())
     .then((blob) => {
@@ -311,12 +311,3 @@ export const downloadError = message => {
     }
 }
 
-/* res.setHeader('Content-Disposition', 'attachment;');
-    res.setHeader('Content-Type', 'application/pdf')
-    res.download('./public/files/WorkofArt2020Web.pdf', 'WorkOfArt2020.pdf', function (err) {
-        if (err) {
-            console.log('Your file could not be downloaded' + err);
-        } else {
-            console.log('File downloaded');
-        }
-    }) */
