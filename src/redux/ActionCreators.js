@@ -269,7 +269,7 @@ export const postUser = (newUser) => () => {
 export const downloadBook = book => dispatch => {
     console.log("Downloading workbook");
     dispatch(requestDownload(book));
-
+//download works, but PDF is corrupted
     return fetch(baseUrl + 'downloads')
     .then((response) => response.blob())
     .then((blob) => {

@@ -5,15 +5,15 @@ import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
 function RenderUnitInfo({unit, isAuthenticated, downloadBook}) {
-    
     //Right now, workbook is downloading automatically when page is rendered.
+    //Automatic download was because I put "this.props.downloadBook" under "componentDidMount"
     if(isAuthenticated) {
         return (
             <div className="container" key={unit.id}>
                 <div className="row">
                 <div className="col-md-3 mt-2">
                             <img src={baseUrl + unit.image} className="unit-img" width="100%" alt={unit.name} />
-                            <Button className="btn text-white mt-2 btn-block" onClick={downloadBook}>Download the Workbook</Button>
+                            <Button className="btn text-white mt-2 btn-block" onClick={(book) => downloadBook(book) }>Download the Workbook</Button>
                     </div>
                     <div className="col-md-9">
                         <h4 className="unit-h4">{unit.name}</h4>
@@ -90,7 +90,7 @@ function UnitInfo(props) {
                             errMess={props.unitsErrMess}
                             auth={props.auth}
                             isAuthenticated={props.auth.isAuthenticated}
-                            bookDownload 
+                            downloadBook={props.downloadBook}
                         />
                     </div>
                 </div>

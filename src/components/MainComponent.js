@@ -32,8 +32,8 @@ const mapDispatchToProps = {
     fetchWorkshops: () => (fetchWorkshops()),
     loginUser: creds => (loginUser(creds)),
     logoutUser: () => (logoutUser()),
-    postUser: user => {postUser(user)},
-    downloadBook: () => (downloadBook())
+    postUser: user => (postUser(user)),
+    downloadBook: book => (downloadBook(book))
 };
 
 class Main extends Component {
@@ -42,7 +42,6 @@ class Main extends Component {
     componentDidMount() {
         this.props.fetchUnits();
         this.props.fetchWorkshops();
-        this.props.downloadBook();
         //this.props.fetchCalendars();
     }
 
@@ -72,7 +71,7 @@ class Main extends Component {
                 errMess={this.props.units.errMess}
                 auth={this.props.auth}
                 isAuthenticated={this.props.auth.isAuthenticated}
-                download={this.props.downloadBook}
+                downloadBook={this.props.downloadBook}
                 />
             );
           };
